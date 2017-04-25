@@ -3,12 +3,14 @@
 ```
 conda install -c https://conda.binstar.org/menpo opencv3
 conda install -c conda-forge tensorflow
-conda install scipy
+conda install scipy matplotlib scikit-learn scikit-image keras pandas
+
 conda install matplotlib
 conda install scikit-learn
 conda install scikit-image
 pip install moviepy
 ``
+> apt-get install libgtk2.0-0 #opencv에러시
 
 ---
 # 리눅스 설치후 
