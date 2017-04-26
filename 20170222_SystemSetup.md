@@ -3,7 +3,7 @@
 ```
 conda install -c https://conda.binstar.org/menpo opencv3
 conda install -c conda-forge tensorflow
-conda install -y scipy matplotlib scikit-learn scikit-image keras pandas ipython jupyter 
+conda install -y scipy matplotlib scikit-learn scikit-image keras pandas ipython jupyter xrdp
 
 conda install matplotlib
 conda install scikit-learn
