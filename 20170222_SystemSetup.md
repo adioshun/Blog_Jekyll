@@ -110,20 +110,32 @@ apt-get install xrdp
 ```
 
 ### X11 Forwarding
+client Side
+```
+# ~/.ssh/config file have these lines:
+Host *
+  ForwardAgent yes
+  ForwardX11 yes
+```  
 
+Server Side 
+```
 sudo apt-get install xauth
 vi /etc/ssh/sshd_config  # X11 관련 3줄 Uncomment
 service sshd restart
 
-$ echo $DISPLAY  #it must show like this "localhost:10.0"
-Check wether I log on "ls -l ~/.Xauthority"'s user ID
+$ echo $DISPLAY  # export DISPLAY=localhost:10.0
+ls -l ~/.Xauthority # Check user ID
 xclock # it will show clock
+```
 
+make connection
+```
 ssh -v -X  adioshun@128.46.80.28
 conda install spyder
+```
 
-- No Qt bindings could be found
--> pip3 install pyqt5
+> No Qt bindings could be found : `pip3 install pyqt5`
 
 
 
