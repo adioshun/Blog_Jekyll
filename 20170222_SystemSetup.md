@@ -136,9 +136,13 @@ sudo apt-get insatll spyder3 #conda install spyder
 ```
 
 > No Qt bindings could be found : `pip3 install pyqt5`
+
 > libGL.so.1: cannot open shared object file: `apt-get --reinstall install libgl1-mesa-glx`
+
 > libsmime3.so: cannot open shared object file: `apt-get install libnss3-dbg`
+
 > libasound.so.2: cannot open shared object file: `sudo apt-get install libasound2`
+
 > libXtst.so.6: cannot open shared object file: `sudo apt-get install libxtst6`
 
 
