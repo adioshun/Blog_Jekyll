@@ -131,7 +131,7 @@ xclock # it will show clock
 
 make connection
 ```
-ssh -v -X  adioshun@128.46.80.28
+ssh -v -X -C xxx@xxx
 sudo apt-get insatll spyder3 #conda install spyder
 ```
 
