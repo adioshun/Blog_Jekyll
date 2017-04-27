@@ -1,67 +1,223 @@
 
-# Simple 버젼
-```
-conda install -c https://conda.binstar.org/menpo opencv3
-conda install -c conda-forge tensorflow
-conda install -y scipy matplotlib scikit-learn scikit-image keras pandas ipython jupyter xrdp
+# Packages Installation
 
-conda install matplotlib
-conda install scikit-learn
-conda install scikit-image
+## Pip
+```bash
+apt-get install -y python3-pip python3-dev
+pip3 install --upgrade pip
+pip3 install opencv_python ipython jupyter scipy matplotlib scikit-learn scikit-image keras pandas
+pip3 install moviepy
+
+#Tensorflow 설치
+export TF_BINARY_URL=https://storage.googleapis.com/tensorflow/linux/cpu/tensorflow-0.12.1-cp34-cp34m-linux_x86_64.whl
+pip3 install --ignore-installed --upgrade $TF_BINARY_URL
+```
+
+## Conda
+Anaconda3설치
+```
+wget https://repo.continuum.io/archive/Anaconda3-4.3.0-Linux-x86_64.sh
+bash Anaconda3-4.3.0-Linux-x86_64.sh
+export PATH="/home/username/anaconda/bin:$PATH" # OR 설치 설정시 pretend하기
+```
+> [https://www.continuum.io/downloads](https://www.continuum.io/downloads) 에서 최신 버전 확인 가능
+
+
+```
+conda install -c https://conda.binstar.org/menpo opencv3 #conda install -c menpo opencv3=3.2.0
+apt-get install libgtk2.0-0 #opencv에러시
+conda install -c conda-forge tensorflow
+conda install -y scipy matplotlib scikit-learn scikit-image keras pandas ipython jupyter
 pip install moviepy
-``
-> apt-get install libgtk2.0-0 #opencv에러시
+```
+
+### Jupyter설정하기
+```bash
+jupyter notebook --generate-config
+vi /root/.jupyter/jupyter_notebook_config.py
+```
+`jupyter_notebook_config.py` 설정파일
+```
+#c = get_config()
+c.NotebookApp.ip = '*'  #L158
+c.NotebookApp.open_browser = False # L201 원격접속으로 활용할 것이기 때문에 비활성화 시켰다.
+c.NotebookApp.port = 8585 # L213 포트를 설정해준다. 기본포트로 8888이 자동 배정된다.
+c.NotebookApp.password = 'sha1:a8dee43a3a44:b18f1ad149a60efb4838da44cf127985d64a5e70' # L210 python 실행후 from notebook.auth import passwd; passwd\(\)
+c.NotebookApp.notebook_dir = '/home/adioshun/Jupyter' # L195 기본 디렉터리를 지정시켜준다.
+```
+
+jupyter 테마: [#1](https://github.com/powerpak/jupyter-dark-theme), [#2](http://haanjack.github.io/jupyter/theme/2016/03/08/jupyter-theme.html), [#3](https://github.com/dunovank/jupyter-themes)
+
+
+
+## 기타 필요 툴
+
+### Jupyter Lab설치
+
+```
+# you will need jupyter notebook >= v4.2
+pip3 install jupyterlab
+jupyter serverextension enable --py jupyterlab --sys-prefix
+jupyter lab
+```
+### Jupyter Extension설치
+```
+conda install -c conda-forge jupyter_contrib_nbextensions
+jupyter contrib nbextension install --user
+```
+[참고](https://github.com/ipython-contrib/jupyter_contrib_nbextensions)
+
+### Jupyter 커널추가
+```
+conda create -n py36 python=3.6
+source activate py36
+conda install notebook ipykernel
+ipython kernel install --user
+```
 
 ---
-# 리눅스 설치후 
-- [zsh변경](https://nolboo.kim/blog/2015/08/21/oh-my-zsh/)
+# 리눅스 설치후
+## zsh변경
+
 ```
 sudo apt-get install zsh
-chsh -s `which zsh` 
+chsh -s `which zsh`
 sudo curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
+```
+> zsh가 느리게 시작 할때 `sudo rm -rf /private/var/log/asl*.as`
 
-# zsh가 느리게 시작 할때 `sudo rm -rf /private/var/log/asl*.as`
+[참고](https://nolboo.kim/blog/2015/08/21/oh-my-zsh/)
+
+## TMUX
+[설치](http://code4rain.tistory.com/1169527180), [자동설치 스크립트](https://www.google.com/webhp?sourceid=chrome-instant&ion=1&espv=2&ie=UTF-8#q=tmux+install+script)
 
 ```
-- [TMUX 설치](http://code4rain.tistory.com/1169527180)
+apt-get install tmux
+tmux new -s <원하는 이름>
+```
+
 	- Ctrl+j를 누른 후에 | 를 누르면 좌우로 분할되고
 	- Ctrl+j를 누른 후에 - 를 누르면 상하로 분할됩니다.,
-
-```
-
-apt-get install tmux 
-tmux new -s <원하는 이름>
-
-# 미리 창 분활 해놓기 : [Tmuxinator](https://github.com/tmuxinator/tmuxinator)
-
-```
-> [자동설치 스크립트](https://www.google.com/webhp?sourceid=chrome-instant&ion=1&espv=2&ie=UTF-8#q=tmux+install+script)
-
+	- 미리 창 분활 해놓기 : [Tmuxinator](https://github.com/tmuxinator/tmuxinator)
 
 출처: http://code4rain.tistory.com/1169527180 [codeRain's Life Blog]
----
 
-# Windows 기반 
+## 원격 접속
 
-### R
+### 원격 접속 툴
+```
+apt-get install xrdp
+```
 
-* R Core 설치 : [https:\/\/cloud.r-project.org\/bin\/windows\/base\/](https://cloud.r-project.org/bin/windows/base/)
-* R Studio 설치 : [https:\/\/www.rstudio.com\/products\/rstudio\/download\/](https://www.rstudio.com/products/rstudio/download/)
+### X11 Forwarding
 
-### Python
+sudo apt-get install xauth
+vi /etc/ssh/sshd_config  # X11 관련 3줄 Uncomment
+service sshd restart
 
-* Anaconda 설치 : [https:\/\/www.continuum.io\/downloads](https://www.continuum.io/downloads)
+$ echo $DISPLAY  #it must show like this "localhost:10.0"
+Check wether I log on "ls -l ~/.Xauthority"'s user ID
+xclock # it will show clock
 
-## Linux 기반
+ssh -v -X  adioshun@128.46.80.28
+conda install spyder
 
-### R 분석환경
+- No Qt bindings could be found
+-> pip3 install pyqt5
 
-#### 1. R 설치
+
+
+
+
+# Tip
+
+## 공간 환보
+apt-get clean
+
+pip clean?
+
+
+###### 가상공간설정저장및불러오기
+```
+#저장하기
+source activate CarND-Vehicle-Detection
+conda env export > environment.yml
+
+#불러오기
+conda env create --file environment.yml --name CarND-Vehicle-Detection
+source activate CarND-Vehicle-Detection
+```
+
+
+#### Spyder remote kernel connection
+1. In jupyter run `%connect_info'
+2. save it as `kernel.json`
+3. Run spyder -
+
+참고 : http://stackoverflow.com/questions/39007571/running-jupyter-with-multiple-python-and-ipython-paths
+
+#### OpenAI Gym
+```
+sudo apt-get install -y python-numpy python-dev cmake zlib1g-dev libjpeg-dev xvfb libav-tools xorg-dev python-opengl libboost-all-dev libsdl2-dev swig
+sudo -H pip install gym
+sudo -H pip install gym[atari]
+```
+ ## ROS Installation
+```
+sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
+sudo apt-key adv --keyserver hkp://ha.pool.sks-keyservers.net:80 --recv-key 421C365BD9FF1F717815A3895523BAEEB01FA116
+sudo apt-get update
+sudo apt-get install ros-kinetic-desktop-base #OR ros-kinetic-desktop-full
+sudo rosdep init
+rosdep update
+echo "source /opt/ros/kinetic/setup.bash" >> ~/.bashrc
+source ~/.bashrc
+sudo apt-get install python-rosinstall
+```
+> Ref :[ROS Wiki](http://wiki.ros.org/kinetic/Installation/Ubuntu)
+
+
+### GPU버젼 Tensorflow설치
+[참고](http://goodtogreate.tistory.com/entry/TensorFlow-GPU-%EB%B2%84%EC%A0%84-%EC%9A%B0%EB%B6%84%ED%88%AC-1604%EC%97%90-%EC%84%A4%EC%B9%98-%ED%95%98%EA%B8%B0)
+
+```bash
+apt-get update
+apt-get install wget vim
+wget https://developer.nvidia.com/compute/cuda/8.0/Prod2/local_installers/cuda-repo-ubuntu1604-8-0-local-ga2_8.0.61-1_amd64-deb #1.9G
+dpkg -i cuda-repo-ubuntu1604-8-0-local-ga2_8.0.61-1_amd64-deb
+apt-get update
+apt-get install cuda # 3699M
+apt-get install openssh-client #scp
+# https://developer.nvidia.com/cudnn ->  cuDNN 5.1 (August 10, 2016) for CUDA 8.0
+# wget tar cvzpf cudnn-8.0-linux-x64-v5.1.tgz /
+tar cvzpf cudnn-8.0-linux-x64-v5.1.tgz /
+
+cp -P cuda/include/cudnn.h /usr/local/cuda/include
+cp -P cuda/lib64/libcudnn* /usr/local/cuda/lib64
+chmod a+r /usr/local/cuda/include/cudnn.h /usr/local/cuda/lib64/libcudnn*
+
+apt-get install -y libcupti-dev  #에러발생 "/sbin/ldconfig.real: /usr/lib/nvidia-375/libEGL.so.1 is not a symbolic link"
+
+apt-get install -y python3-pip python3-dev
+
+pip3 install tensorflow-gpu
+
+pip3 install opencv_python ipython jupyter
+
+pip3 install --upgrade pip
+
+pip3 install -y scipy matplotlib scikit-learn scikit-image keras pandas
+```
+
+
+
+### R 설치
 
 ```bash
 sudo apt-get update
 sudo apt-get install r-base
 ```
+> 윈도우용 설치 : [r-project](https://cloud.r-project.org/bin/windows/base/)
 
 #### 2. R-Studio 설치
 
@@ -70,21 +226,7 @@ $ sudo apt-get install gdebi-core
 $ wget https://download2.rstudio.org/rstudio-server-1.0.136-amd64.deb
 $ sudo gdebi rstudio-server-1.0.136-amd64.deb
 ```
-
-> 접속 확인 `http://localhost:8787/`
-
-### Python\/Jupyter 설치
-
-#### 1. Python설치 \(/w conda\)
-
-```bash
-wget https://repo.continuum.io/archive/Anaconda3-4.3.0-Linux-x86_64.sh
-bash Anaconda3-4.3.0-Linux-x86_64.sh
-export PATH="/home/username/anaconda/bin:$PATH" OR 설치 설정시 pretend하기
-```
-
-> [https://www.continuum.io/downloads](https://www.continuum.io/downloads) 에서 최신 버전 확인 가능
-
+> 최신버젼 확인 [R Studio](www.rstudio.com/products/rstudio/download/)
 
 #### 2. Python 용 R 설치 \(/w conda\)
 
@@ -106,141 +248,3 @@ IRkernel::installspec()
 
 > 패키지설치시: install.packages("ldavis", "/home/user/anaconda3/lib/R/library")
 > [메뉴얼필독](https://www.r-bloggers.com/jupyter-and-r-markdown-notebooks-with-r/amp/)
-
-
-
-
-#### 3. OpenCV 설치 \(/w conda\)
-
-`conda install -c https://conda.binstar.org/menpo opencv3`
-
-특정버젼: `conda install -c menpo opencv3=3.2.0`
-
-import cv2 #(!!!IMPORTANT it’s still cv2 not cv3)
-
-To check the version `print(cv2.__version__)`
-
-
-
-#### 4. Tensorflow 설치 \(/w conda\)
-
-Create a conda environment
-
-```
-$ conda create -n tensorflow python=x.x
-```
-
-> python=x.x 지정유뮤의 차이점은? opencv 설치에 영향 미침
-
-가상공간 활성화 & 설치
-
-```
-$ source activate tensorflow
-(tensorflow)$ conda install -c conda-forge tensorflow
-# Linux/Mac OS X, Python 2.7/3.4/3.5, CPU only:
-```
-
-###### 가상공간설정저장및불러오기
-```
-#저장하기
-source activate CarND-Vehicle-Detection
-conda env export > environment.yml
-
-#불러오기
-conda env create --file environment.yml --name CarND-Vehicle-Detection
-source activate CarND-Vehicle-Detection
-```
-
-###### pip을이용하여 설치할 경우 가상공간 진입후 하기 ([python3)
-```
-$ source activate tensorflow
-$ (tensorflow)$ export TF_BINARY_URL=https://storage.googleapis.com/tensorflow/linux/cpu/tensorflow-0.12.1-cp34-cp34m-linux_x86_64.whl
-$ (tensorflow)$ pip3 install --ignore-installed --upgrade $TF_BINARY_URL
-```
-
-###### 3.1 Jupyter 설정하기 \(/w conda, /w tensorflow\)
-
-설치하기
-
-```
-$ source activate tensorflow
-(tensorflow)$ conda install ipython
-(tensorflow)$ conda install jupyter
-```
-
-설정하기
-
-```
-$ jupyter notebook --generate-config
-$ vi /root/.jupyter/jupyter_notebook_config.py
-$ nohup jupyter notebook &
-```
-
-##### jupyter 테마
-https://github.com/powerpak/jupyter-dark-theme
-http://haanjack.github.io/jupyter/theme/2016/03/08/jupyter-theme.html
-https://github.com/dunovank/jupyter-themes
-
-###### 설정 파일 \# /home/\(username\)/.jupyter/jupyter\_notebook\_config.py
-```
-#c = get_config()
-c.NotebookApp.ip = '*'  #L158
-c.NotebookApp.open_browser = False # L201 원격접속으로 활용할 것이기 때문에 비활성화 시켰다.
-c.NotebookApp.port = 8585 # L213 포트를 설정해준다. 기본포트로 8888이 자동 배정된다.
-c.NotebookApp.password = u'sha1:a8dee43a3a44:b18f1ad149a60efb4838da44cf127985d64a5e70' # L210 python 실행후 from notebook.auth import passwd; passwd\(\)
-c.NotebookApp.notebook_dir = u'/home/adioshun/Jupyter' # L195 기본 디렉터리를 지정시켜준다.
-# c.NotebookApp.base_url = 'notebook' #L67 외부 접근을 위한 필수 작업
-```
-
-> 공식 TensorFlow 설치 [[메뉴얼]](https://www.tensorflow.org/versions/master/get_started/os_setup), [[Ref]](http://b.winterj.me/220858584491)
-
-#### Jupyter Lab설치
-
-```
-# you will need jupyter notebook >= v4.2
-pip3 install jupyterlab
-jupyter serverextension enable --py jupyterlab --sys-prefix
-jupyter lab
-```
-#### Jupyter Extension설치
-```
-conda install -c conda-forge jupyter_contrib_nbextensions
-jupyter contrib nbextension install --user
-```
-[참고](https://github.com/ipython-contrib/jupyter_contrib_nbextensions)
-
-
-#### 커널추가 
-```
-conda create -n py36 python=3.6
-source activate py36
-conda install notebook ipykernel
-ipython kernel install --user 
-``` 
-
-#### Spyder remote kernel connection 
-1. In jupyter run `%connect_info'
-2. save it as `kernel.json`
-3. Run spyder - 
-
-http://stackoverflow.com/questions/39007571/running-jupyter-with-multiple-python-and-ipython-paths
-
-#### OpenAI Gym
-```
-sudo apt-get install -y python-numpy python-dev cmake zlib1g-dev libjpeg-dev xvfb libav-tools xorg-dev python-opengl libboost-all-dev libsdl2-dev swig
-sudo -H pip install gym
-sudo -H pip install gym[atari]
-```
- ## ROS Installation
-```
-sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
-sudo apt-key adv --keyserver hkp://ha.pool.sks-keyservers.net:80 --recv-key 421C365BD9FF1F717815A3895523BAEEB01FA116
-sudo apt-get update
-sudo apt-get install ros-kinetic-desktop-base #OR ros-kinetic-desktop-full  
-sudo rosdep init
-rosdep update
-echo "source /opt/ros/kinetic/setup.bash" >> ~/.bashrc
-source ~/.bashrc
-sudo apt-get install python-rosinstall
-```
-> Ref :[ROS Wiki](http://wiki.ros.org/kinetic/Installation/Ubuntu)
