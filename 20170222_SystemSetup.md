@@ -132,11 +132,12 @@ xclock # it will show clock
 make connection
 ```
 ssh -v -X  adioshun@128.46.80.28
-conda install spyder
+sudo apt-get insatll spyder3 #conda install spyder
 ```
 
 > No Qt bindings could be found : `pip3 install pyqt5`
 
+> libGL.so.1: cannot open shared object file: `apt-get --reinstall install libgl1-mesa-glx`
 
 
 
