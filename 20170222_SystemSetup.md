@@ -54,6 +54,8 @@ jupyter 테마: [#1](https://github.com/powerpak/jupyter-dark-theme), [#2](http:
 
 ### Jupyter Lab설치
 
+
+Unonffical
 ```
 # you will need jupyter notebook >= v4.2
 pip3 install jupyterlab
@@ -61,8 +63,20 @@ jupyter serverextension enable --py jupyterlab --sys-prefix
 jupyter lab
 ```
 ### Jupyter Extension설치
+[Official](https://docs.continuum.io/anaconda/jupyter-notebook-extensions)
+```
+# conda install nb_conda -c conda-forge
+# conda install nb_conda
+# conda install -c anaconda-nb-extensions nbpresent
+
+```
+> UnsatisfiableError: [](https://github.com/ContinuumIO/anaconda-issues/issues/1423)
+
+
+[Unofficial](https://jupyter-contrib-nbextensions.readthedocs.io/en/latest/install.html)
 ```
 conda install -c conda-forge jupyter_contrib_nbextensions
+#pip install https://github.com/ipython-contrib/jupyter_contrib_nbextensions/tarball/master
 jupyter contrib nbextension install --user
 ```
 [참고](https://github.com/ipython-contrib/jupyter_contrib_nbextensions)
