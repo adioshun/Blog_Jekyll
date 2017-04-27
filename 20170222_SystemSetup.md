@@ -63,17 +63,17 @@ jupyter serverextension enable --py jupyterlab --sys-prefix
 jupyter lab
 ```
 ### Jupyter Extension설치
-[Official](https://docs.continuum.io/anaconda/jupyter-notebook-extensions)
+##### Official:[ref](https://docs.continuum.io/anaconda/jupyter-notebook-extensions)
 ```
-# conda install nb_conda -c conda-forge
+conda install nb_conda -c conda-forge
 # conda install nb_conda
 # conda install -c anaconda-nb-extensions nbpresent
 
 ```
-> UnsatisfiableError: [](https://github.com/ContinuumIO/anaconda-issues/issues/1423)
+> UnsatisfiableError: [solved](https://github.com/ContinuumIO/anaconda-issues/issues/1423)
 
 
-[Unofficial](https://jupyter-contrib-nbextensions.readthedocs.io/en/latest/install.html)
+##### Unofficial:[ref](https://jupyter-contrib-nbextensions.readthedocs.io/en/latest/install.html)
 ```
 conda install -c conda-forge jupyter_contrib_nbextensions
 #pip install https://github.com/ipython-contrib/jupyter_contrib_nbextensions/tarball/master
