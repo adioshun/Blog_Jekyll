@@ -118,6 +118,13 @@ tmux new -s <원하는 이름>
 
 ## 원격 접속
 
+#### GUI Desttop 환경설치
+```
+$ sudo apt-get install aptitude tasksel
+$ sudo tasksel install gnome-desktop --new-install
+```
+
+
 ### 원격 접속 툴
 ```
 apt-get install xrdp
@@ -130,6 +137,8 @@ username=
 password=ask
 ip=127.0.0.1
 port=5900
+
+service xrdp restart
 ```
 
 ### VNC
