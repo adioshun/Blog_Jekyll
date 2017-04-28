@@ -231,7 +231,10 @@ tar cvzpf cudnn-8.0-linux-x64-v5.1.tgz ./
 cp -P cuda/include/cudnn.h /usr/local/cuda/include
 cp -P cuda/lib64/libcudnn* /usr/local/cuda/lib64
 chmod a+r /usr/local/cuda/include/cudnn.h /usr/local/cuda/lib64/libcudnn*
+```
 
+tensorflow, opencv, keras, etc. installation
+```bash
 apt-get install -y libcupti-dev  #에러발생 "/sbin/ldconfig.real: /usr/lib/nvidia-375/libEGL.so.1 is not a symbolic link"
 
 apt-get install -y python3-pip python3-dev
@@ -244,6 +247,17 @@ pip3 install --upgrade pip
 
 pip3 install -y scipy matplotlib scikit-learn scikit-image keras pandas
 ```
+
+> libcudnn.so.5: cannot open shared object file 
+
+> ldconfig -v 로해당라이브러리위치확인
+
+> LD_LIBRARY_PATH="/usr/local/cuda-8.0/targets/x86_64-linux/lib
+
+> export LD_LIBRARY_PATH
+
+> echo $LD_LIBRARY_PATH
+
 
 
 
