@@ -123,6 +123,20 @@ tmux new -s <원하는 이름>
 apt-get install xrdp
 ```
 
+### VNC
+Server side
+```
+sudo apt-get install -y tightvncserver
+vncserver
+
+```
+
+client side
+```
+nc localhost 5901 #port open check
+
+```
+
 ### X11 Forwarding
 client Side
 ```
@@ -159,6 +173,8 @@ sudo apt-get insatll spyder3 #conda install spyder
 
 > libXtst.so.6: cannot open shared object file: `sudo apt-get install libxtst6`
 
+### Chrome RND
+http://timbot-inc.blogspot.com/2015/11/cloud-workstation-howto-chromebook.html
 
 # Tip
 
