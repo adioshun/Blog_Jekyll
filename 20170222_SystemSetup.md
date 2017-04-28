@@ -211,6 +211,7 @@ sudo apt-get install python-rosinstall
 ### GPU버젼 Tensorflow설치
 [참고](http://goodtogreate.tistory.com/entry/TensorFlow-GPU-%EB%B2%84%EC%A0%84-%EC%9A%B0%EB%B6%84%ED%88%AC-1604%EC%97%90-%EC%84%A4%EC%B9%98-%ED%95%98%EA%B8%B0)
 
+CUDA installation
 ```bash
 apt-get update
 apt-get install wget vim
@@ -219,9 +220,13 @@ dpkg -i cuda-repo-ubuntu1604-8-0-local-ga2_8.0.61-1_amd64-deb
 apt-get update
 apt-get install cuda # 3699M
 apt-get install openssh-client #scp
-# https://developer.nvidia.com/cudnn ->  cuDNN 5.1 (August 10, 2016) for CUDA 8.0
-# wget tar cvzpf cudnn-8.0-linux-x64-v5.1.tgz /
-tar cvzpf cudnn-8.0-linux-x64-v5.1.tgz /
+```
+cudaa installation
+- Download : https://developer.nvidia.com/cudnn ->  cuDNN 5.1 (August 10, 2016) for CUDA 8.0
+
+```bash
+wget tar cvzpf cudnn-8.0-linux-x64-v5.1.tgz /
+tar cvzpf cudnn-8.0-linux-x64-v5.1.tgz ./
 
 cp -P cuda/include/cudnn.h /usr/local/cuda/include
 cp -P cuda/lib64/libcudnn* /usr/local/cuda/lib64
