@@ -97,6 +97,13 @@ python -m pudb.run foo.py
 
 > 참고 : [[파이썬] PUDB 콘솔 디버거](http://egloos.zum.com/mcchae/v/10918232)
 
+
+## GPU Monitor 
+
+```
+apt-get install nmon
+```
+
 ---
 # 리눅스 설치후
 ## zsh변경
