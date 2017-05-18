@@ -236,6 +236,7 @@ pip clean?
 
 
 ###### 가상공간설정저장및불러오기
+
 ```
 #저장하기
 source activate CarND-Vehicle-Detection
@@ -255,13 +256,16 @@ source activate CarND-Vehicle-Detection
 참고 : http://stackoverflow.com/questions/39007571/running-jupyter-with-multiple-python-and-ipython-paths
 
 #### OpenAI Gym
+
 ```
 sudo apt-get install -y python-numpy python-dev cmake zlib1g-dev libjpeg-dev xvfb libav-tools xorg-dev python-opengl libboost-all-dev libsdl2-dev swig
 sudo -H pip install gym
 sudo -H pip install gym[atari]
 ```
- ## ROS Installation
-```
+ 
+## ROS Installation
+
+```bash
 sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
 sudo apt-key adv --keyserver hkp://ha.pool.sks-keyservers.net:80 --recv-key 421C365BD9FF1F717815A3895523BAEEB01FA116
 sudo apt-get update
@@ -276,9 +280,11 @@ sudo apt-get install python-rosinstall
 
 
 ### GPU버젼 Tensorflow설치
+
 [참고](http://goodtogreate.tistory.com/entry/TensorFlow-GPU-%EB%B2%84%EC%A0%84-%EC%9A%B0%EB%B6%84%ED%88%AC-1604%EC%97%90-%EC%84%A4%EC%B9%98-%ED%95%98%EA%B8%B0)
 
 CUDA installation
+
 ```bash
 apt-get update
 apt-get install wget vim
@@ -288,19 +294,24 @@ apt-get update
 apt-get install cuda # 3699M
 apt-get install openssh-client #scp
 ```
+
 cudaa installation
 - Download : https://developer.nvidia.com/cudnn ->  cuDNN 5.1 (August 10, 2016) for CUDA 8.0
 
+
 ```bash
+
 wget tar cvzpf cudnn-8.0-linux-x64-v5.1.tgz /
 tar cvzpf cudnn-8.0-linux-x64-v5.1.tgz ./
 
 cp -P cuda/include/cudnn.h /usr/local/cuda/include
 cp -P cuda/lib64/libcudnn* /usr/local/cuda/lib64
 chmod a+r /usr/local/cuda/include/cudnn.h /usr/local/cuda/lib64/libcudnn*
+
 ```
 
 tensorflow, opencv, keras, etc. installation
+
 ```bash
 apt-get install -y libcupti-dev  #에러발생 "/sbin/ldconfig.real: /usr/lib/nvidia-375/libEGL.so.1 is not a symbolic link"
 
@@ -313,6 +324,7 @@ pip3 install opencv_python ipython jupyter
 pip3 install --upgrade pip
 
 pip3 install -y scipy matplotlib scikit-learn scikit-image keras pandas
+
 ```
 
 > libcudnn.so.5: cannot open shared object file 
