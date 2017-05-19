@@ -117,19 +117,6 @@ sudo curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.
 
 [참고](https://nolboo.kim/blog/2015/08/21/oh-my-zsh/)
 
-## TMUX
-[설치](http://code4rain.tistory.com/1169527180), [자동설치 스크립트](https://www.google.com/webhp?sourceid=chrome-instant&ion=1&espv=2&ie=UTF-8#q=tmux+install+script)
-
-```
-apt-get install tmux
-tmux new -s <원하는 이름>
-```
-
-	- Ctrl+j를 누른 후에 | 를 누르면 좌우로 분할되고
-	- Ctrl+j를 누른 후에 - 를 누르면 상하로 분할됩니다.,
-	- 미리 창 분활 해놓기 : [Tmuxinator](https://github.com/tmuxinator/tmuxinator)
-
-출처: http://code4rain.tistory.com/1169527180 [codeRain's Life Blog]
 
 ## 원격 접속
 
