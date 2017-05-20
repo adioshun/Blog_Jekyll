@@ -192,3 +192,25 @@ pip3 install -y scipy matplotlib scikit-learn scikit-image keras pandas
 
 
 
+#### 2. Python 용 R 설치 \(/w conda\)
+
+```bash
+conda install -c r r-irkernel
+conda install -c r r-essentials
+```
+
+###### ipython에서 R 패지키 설치 방법 \(R 콘솔에서 실행??\)
+
+sudo apt-get install libcurl4-openssl-dev
+sudo apt-get install libssl-dev
+```
+#R쉘진입
+install.packages(c('repr', 'IRdisplay', 'evaluate', 'crayon', 'pbdZMQ', 'devtools', 'uuid', 'digest'))
+devtools::install_github('IRkernel/IRkernel')
+IRkernel::installspec()
+```
+
+> 패키지설치시: install.packages("ldavis", "/home/user/anaconda3/lib/R/library")
+> [메뉴얼필독](https://www.r-bloggers.com/jupyter-and-r-markdown-notebooks-with-r/amp/)
+
+
