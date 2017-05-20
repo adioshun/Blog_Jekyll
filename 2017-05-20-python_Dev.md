@@ -88,15 +88,6 @@ conda install notebook ipykernel
 ipython kernel install --user
 ```
 
-## Python GUI Debuger
-```bash
-sudo apt-get install python-pudb
-python -m pudb.run foo.py
-```
-
-> 참고 : [[파이썬] PUDB 콘솔 디버거](http://egloos.zum.com/mcchae/v/10918232)
-
-
 ###### 가상공간설정저장및불러오기
 
 ```
@@ -129,8 +120,22 @@ sudo -H pip install gym
 sudo -H pip install gym[atari]
 
 ```
+# Debuger 
 
+GUI Debuger
+```bash
+sudo apt-get install python-pudb
+python -m pudb.run foo.py
+```
 
+> 참고 : [[파이썬] PUDB 콘솔 디버거](http://egloos.zum.com/mcchae/v/10918232)
+
+better-exceptions
+```bash
+pip install better_exceptions
+import better_exceptions
+```
+> 참고 : https://github.com/Qix-/better-exceptions
 
 ### GPU버젼 Tensorflow설치
 
