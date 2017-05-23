@@ -85,7 +85,9 @@ jupyter contrib nbextension install --user
 
 ### Jupyter 커널추가
 ```
-conda create -n py36 python=3.6
+jupyter kernelspec list #설치된 커널 확인 
+conda create -n python3 python=3 ipykernel
+
 source activate py36
 conda install notebook ipykernel
 ipython kernel install --user
