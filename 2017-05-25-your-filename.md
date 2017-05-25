@@ -21,18 +21,32 @@ DOGE: 마스코트 댕댕이가 귀엽다. 은근히 시총이 높은 코인이�
 제트캐쉬/모네로/대쉬: 익명성을 보장하는 코인. 완벽한 익명성을 보장하는가? 에 대한 의문이 있다. 모네로는 어둠의 코인계에서 기축통화 취급. 
 
 
+# 투자 팁 
+
+- 리플 몰빵했다가 망한적이 있습니다. 분할매수로 70/25/5 구성으로 BTC/이더/이클 추천드립니다.
+
+- 코인원에서 비트코인 40%, 이더리움 20%, 이더리움 클래식 20%, 리플 20% 이렇게 담아놨습니다.
+
+
 # post 
 
 - [[잡생각] 단타,중투,장타? 나에게 맞는 투자전략은?](https://steemit.com/kr/@goldenman/2d1bpz)
 
 # 관련 링트 
 
+- [아이 이더 월렛](https://www.myetherwallet.com): 개인 지갑 
+
+- [Ledger Nano S](https://search.naver.com/search.naver?where=nexearch&sm=top_hty&fbm=1&ie=utf8&query=Ledger+Nano+S): 하드웨에 지갑 
+
 ## 거래소 
 - [poloniex](https://poloniex.com): 해외 거래소 
 
+- [코인마켓캡](http://www.coinmarketcap.com): 전세계 가상화폐에 대한 정보와 어느 거래소에서 판매되고 있는지, [[원화]](https://coinmarketcap.com/#KRW)
+
+- [Workd Coin Index](https://www.worldcoinindex.com): 전체 그래프 
+
 - [coingecko](https://www.coingecko.com/ko): 전체 그래프 
 
-- [코인마켓캡](http://www.coinmarketcap.com): 전세계 가상화폐에 대한 정보와 어느 거래소에서 판매되고 있는지
 
 ## 커뮤니티 
 
