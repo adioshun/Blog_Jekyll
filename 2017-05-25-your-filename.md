@@ -31,7 +31,9 @@ DOGE: 마스코트 댕댕이가 귀엽다. 은근히 시총이 높은 코인이�
 
 - [코인마켓캡](http://www.coinmarketcap.com): 전세계 가상화폐에 대한 정보와 어느 거래소에서 판매되고 있는지
 
-- [steem it](https://steemit.com)
+- [coingecko](https://www.coingecko.com/ko): 전체 그래프 
+
+- [steem it](https://steemit.com): 정보 제공 
 
 # 자료 
 
