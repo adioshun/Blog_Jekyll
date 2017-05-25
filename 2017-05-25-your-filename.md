@@ -81,13 +81,19 @@ DOGE: 마스코트 댕댕이가 귀엽다. 은근히 시총이 높은 코인이�
 - [Ledger Nano S](https://search.naver.com/search.naver?where=nexearch&sm=top_hty&fbm=1&ie=utf8&query=Ledger+Nano+S): 하드웨에 지갑 
 
 ## 거래소 
-- [poloniex](https://poloniex.com): 해외 거래소 
+- [poloniex](https://poloniex.com): 해외 거래소 , [[사용법]](http://pachirabank.tistory.com/entry/폴로닉스-Poloniz-비트코인-알트코인-가상화폐-거래소)
+
+- [빗썸](https://www.bithumb.com): 한국 거래소 
+
+
 
 - [코인마켓캡](http://www.coinmarketcap.com): 전세계 가상화폐에 대한 정보와 어느 거래소에서 판매되고 있는지, [[원화]](https://coinmarketcap.com/#KRW)
 
 - [Workd Coin Index](https://www.worldcoinindex.com): 전체 그래프 
 
 - [coingecko](https://www.coingecko.com/ko): 전체 그래프 
+
+
 
 
 ## 커뮤니티 
