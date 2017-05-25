@@ -49,7 +49,7 @@ DOGE: 마스코트 댕댕이가 귀엽다. 은근히 시총이 높은 코인이�
 
 - [[잡생각] 단타,중투,장타? 나에게 맞는 투자전략은?](https://steemit.com/kr/@goldenman/2d1bpz)
 
-- [정부에서 관여를 언제쯤 하게되려나..](https://www.clien.net/service/board/cm_vcoin/10784301?po=1&od=T31&sk=&sv=&category=질문&groupCd=): 정부 관여는 화폐로 인정하는것이므로 호재 
+- [정부에서 관여를 언제쯤 하게되려나..](https://www.clien.net/service/board/cm_vcoin/10784301?po=1&od=T31&sk=&sv=&category=질문&groupCd=): 정부 관여는 화폐로 인정하는것이므로 호재, [께임코인에 관여 안하는것과 같음](https://www.clien.net/service/board/cm_vcoin/10783177?po=2&od=T31&sk=&sv=&category=질문&groupCd=)
 
 # 관련 링트 
 
