@@ -1,3 +1,12 @@
+# 매매 
+
+- 폴로닉스에서 USD 같은 명목화폐 입금은 안 받지 않나요? -> 코인베이스에서 사서 폴로로 넘겼네요. 
+
+
+- 코인베이스(Coinbase) - 이더리움 - 플로닉스 - 국내 
+
+[해외 차익거래 문제 없을까요?](https://www.clien.net/service/board/cm_vcoin/10784491?po=1&od=T31&sk=&sv=&category=질문&groupCd=)
+
 # 코인 종류 
 
 비트: 코인계의 기축통화. 가격이 너무 올라서 사기 부담스러워진건 확실하지만 알트들도 성장해버리는 바람에 알트를 하려면 살 수 밖에 없음. 오르는 이유가 확실하다.
@@ -20,6 +29,14 @@ DOGE: 마스코트 댕댕이가 귀엽다. 은근히 시총이 높은 코인이�
 
 제트캐쉬/모네로/대쉬: 익명성을 보장하는 코인. 완벽한 익명성을 보장하는가? 에 대한 의문이 있다. 모네로는 어둠의 코인계에서 기축통화 취급. 
 
+알트코인??
+
+
+# 가상화폐 위험성 
+1. 각 국가 혹은 국제단위의 규제
+2. 상폐 수준의 코인 증발 사례 발생
+3. 장기간 횡보세에 따른 코인 지식 부재 자금 유출에 의한 하락
+
 
 # 투자 팁 
 
@@ -31,6 +48,8 @@ DOGE: 마스코트 댕댕이가 귀엽다. 은근히 시총이 높은 코인이�
 # post 
 
 - [[잡생각] 단타,중투,장타? 나에게 맞는 투자전략은?](https://steemit.com/kr/@goldenman/2d1bpz)
+
+- [정부에서 관여를 언제쯤 하게되려나..](https://www.clien.net/service/board/cm_vcoin/10784301?po=1&od=T31&sk=&sv=&category=질문&groupCd=): 정부 관여는 화폐로 인정하는것이므로 호재 
 
 # 관련 링트 
 
@@ -55,6 +74,14 @@ DOGE: 마스코트 댕댕이가 귀엽다. 은근히 시총이 높은 코인이�
 - [steem it](https://steemit.com): 정보 제공 
 
 - [텔레그램](https://www.clien.net/service/board/cm_vcoin/10773143?po=0&od=T31&sk=&sv=&category=강좌와팁&groupCd=): 대화방, 가격 알림 
+
+
+http://www.chaintalk.io/
+https://coinkorea.info/
+http://cointalk.co.kr/
+http://www.theblockchain.kr/
+https://www.ddengle.com/
+
 
 # 자료 
 
