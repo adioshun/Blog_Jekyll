@@ -40,7 +40,7 @@ DOGE: 마스코트 댕댕이가 귀엽다. 은근히 시총이 높은 코인이�
 
 - [steem it](https://steemit.com): 정보 제공 
 
-- [텔레그램](https://www.clien.net/service/board/cm_vcoin/10773143?po=0&od=T31&sk=&sv=&category=강좌와팁&groupCd=)
+- [텔레그램](https://www.clien.net/service/board/cm_vcoin/10773143?po=0&od=T31&sk=&sv=&category=강좌와팁&groupCd=): 대화방, 가격 알림 
 
 # 자료 
 
