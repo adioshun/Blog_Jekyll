@@ -69,6 +69,13 @@ DOGE: 마스코트 댕댕이가 귀엽다. 은근히 시총이 높은 코인이�
 
 # 관련 링트 
 
+
+# 코인 구매 
+
+- [코인 베이스](https://www.coinbase.com)
+
+- [CEX](https://cex.io)
+
 - [아이 이더 월렛](https://www.myetherwallet.com): 개인 지갑 
 
 - [Ledger Nano S](https://search.naver.com/search.naver?where=nexearch&sm=top_hty&fbm=1&ie=utf8&query=Ledger+Nano+S): 하드웨에 지갑 
