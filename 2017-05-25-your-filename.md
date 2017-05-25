@@ -46,6 +46,7 @@ DOGE: 마스코트 댕댕이가 귀엽다. 은근히 시총이 높은 코인이�
 
 [해외 차익거래 문제 없을까요?](https://www.clien.net/service/board/cm_vcoin/10784491?po=1&od=T31&sk=&sv=&category=질문&groupCd=)
 
+[이더리움 자고일어났더니 10원 되있고 이럴 확률 얼마나 될까요?](https://www.clien.net/service/board/cm_vcoin/10775563?po=4&od=T31&sk=&sv=&category=질문&groupCd=)
 
 # 투자 팁 
 
@@ -59,6 +60,10 @@ DOGE: 마스코트 댕댕이가 귀엽다. 은근히 시총이 높은 코인이�
 - [[잡생각] 단타,중투,장타? 나에게 맞는 투자전략은?](https://steemit.com/kr/@goldenman/2d1bpz)
 
 - [가상화페 다들 어떻게 보관하시나요?](https://www.clien.net/service/board/cm_vcoin/10780344?po=3&od=T31&sk=&sv=&category=질문&groupCd=)
+
+
+- [Coinbase에서 48시간 기다리지 않고 멀티시그 지갑 출금하는 방법](https://www.ddengle.com/board_free/995484)
+
 
 # 관련 링트 
 
@@ -79,6 +84,9 @@ DOGE: 마스코트 댕댕이가 귀엽다. 은근히 시총이 높은 코인이�
 ## 커뮤니티 
 
 - [클리앙-가상화폐당](https://www.clien.net/service/board/cm_vcoin)
+
+
+- [땡글](https://www.ddengle.com): 한국 커뮤니티 
 
 - [steem it](https://steemit.com): 정보 제공 
 
