@@ -27,13 +27,20 @@ DOGE: 마스코트 댕댕이가 귀엽다. 은근히 시총이 높은 코인이�
 
 # 관련 링트 
 
+## 거래소 
 - [poloniex](https://poloniex.com): 해외 거래소 
-
-- [코인마켓캡](http://www.coinmarketcap.com): 전세계 가상화폐에 대한 정보와 어느 거래소에서 판매되고 있는지
 
 - [coingecko](https://www.coingecko.com/ko): 전체 그래프 
 
+- [코인마켓캡](http://www.coinmarketcap.com): 전세계 가상화폐에 대한 정보와 어느 거래소에서 판매되고 있는지
+
+## 커뮤니티 
+
+- [클리앙-가상화폐당](https://www.clien.net/service/board/cm_vcoin)
+
 - [steem it](https://steemit.com): 정보 제공 
+
+- [텔레그램](https://www.clien.net/service/board/cm_vcoin/10773143?po=0&od=T31&sk=&sv=&category=강좌와팁&groupCd=)
 
 # 자료 
 
