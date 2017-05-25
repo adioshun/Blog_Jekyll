@@ -5,7 +5,11 @@
 
 - 코인베이스(Coinbase) - 이더리움 - 플로닉스 - 국내 
 
-[해외 차익거래 문제 없을까요?](https://www.clien.net/service/board/cm_vcoin/10784491?po=1&od=T31&sk=&sv=&category=질문&groupCd=)
+- 코빗 - 비트렉스 - 비트렉스(ETH->BTC) - 알트코인 
+
+
+[중요] 비트코인을 사셨으면 꼭 비트코인 지갑에 넣으셔야합니다 잘못해서 다른코인 지갑에 넣으시면 사라져요 주의하세요
+
 
 # 코인 종류 
 
@@ -37,6 +41,11 @@ DOGE: 마스코트 댕댕이가 귀엽다. 은근히 시총이 높은 코인이�
 2. 상폐 수준의 코인 증발 사례 발생
 3. 장기간 횡보세에 따른 코인 지식 부재 자금 유출에 의한 하락
 
+- [정부에서 관여를 언제쯤 하게되려나..](https://www.clien.net/service/board/cm_vcoin/10784301?po=1&od=T31&sk=&sv=&category=질문&groupCd=): 정부 관여는 화폐로 인정하는것이므로 호재, [께임코인에 관여 안하는것과 같음](https://www.clien.net/service/board/cm_vcoin/10783177?po=2&od=T31&sk=&sv=&category=질문&groupCd=)
+
+
+[해외 차익거래 문제 없을까요?](https://www.clien.net/service/board/cm_vcoin/10784491?po=1&od=T31&sk=&sv=&category=질문&groupCd=)
+
 
 # 투자 팁 
 
@@ -49,7 +58,7 @@ DOGE: 마스코트 댕댕이가 귀엽다. 은근히 시총이 높은 코인이�
 
 - [[잡생각] 단타,중투,장타? 나에게 맞는 투자전략은?](https://steemit.com/kr/@goldenman/2d1bpz)
 
-- [정부에서 관여를 언제쯤 하게되려나..](https://www.clien.net/service/board/cm_vcoin/10784301?po=1&od=T31&sk=&sv=&category=질문&groupCd=): 정부 관여는 화폐로 인정하는것이므로 호재, [께임코인에 관여 안하는것과 같음](https://www.clien.net/service/board/cm_vcoin/10783177?po=2&od=T31&sk=&sv=&category=질문&groupCd=)
+- [가상화페 다들 어떻게 보관하시나요?](https://www.clien.net/service/board/cm_vcoin/10780344?po=3&od=T31&sk=&sv=&category=질문&groupCd=)
 
 # 관련 링트 
 
