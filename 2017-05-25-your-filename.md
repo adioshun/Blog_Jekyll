@@ -63,6 +63,7 @@ DOGE: 마스코트 댕댕이가 귀엽다. 은근히 시총이 높은 코인이�
 
 - [가상화페 다들 어떻게 보관하시나요?](https://www.clien.net/service/board/cm_vcoin/10780344?po=3&od=T31&sk=&sv=&category=질문&groupCd=)
 
+- [국내 주요 가상화폐 거래소 비교](http://m.blog.naver.com/coinblock/220736842552)
 
 - [Coinbase에서 48시간 기다리지 않고 멀티시그 지갑 출금하는 방법](https://www.ddengle.com/board_free/995484)
 
@@ -85,7 +86,9 @@ DOGE: 마스코트 댕댕이가 귀엽다. 은근히 시총이 높은 코인이�
 
 - [빗썸](https://www.bithumb.com): 한국 거래소 
 
+코빗 (https://www.korbit.co.kr/)
 
+ 코인원 (https://coinone.co.kr/)
 
 - [코인마켓캡](http://www.coinmarketcap.com): 전세계 가상화폐에 대한 정보와 어느 거래소에서 판매되고 있는지, [[원화]](https://coinmarketcap.com/#KRW)
 
@@ -101,18 +104,31 @@ DOGE: 마스코트 댕댕이가 귀엽다. 은근히 시총이 높은 코인이�
 - [클리앙-가상화폐당](https://www.clien.net/service/board/cm_vcoin)
 
 
-- [땡글](https://www.ddengle.com): 한국 커뮤니티 
+- [땡글](https://www.ddengle.com): 한국 커뮤니티, 가장 오래된곳은 땡글인데요, 요즘은 채굴 위주로 정보가 공유되고 있습니다.
 
 - [steem it](https://steemit.com): 정보 제공 
 
 - [텔레그램](https://www.clien.net/service/board/cm_vcoin/10773143?po=0&od=T31&sk=&sv=&category=강좌와팁&groupCd=): 대화방, 가격 알림 
 
 
-http://www.chaintalk.io/
+http://www.chaintalk.io/ : 체인톡은 땡글에서 활동하시던 분들이 새로 만드신 커뮤니티인데요, 이더리움 관련 정보가 많습니다
+
 https://coinkorea.info/
 http://cointalk.co.kr/
 http://www.theblockchain.kr/
+
 https://www.ddengle.com/
+
+
+커뮤니티:https://coinkorea.info/ 
+
+트위터:https://twitter.com/coinkor/
+
+슬랙: https://coinkorea.slack.com/
+
+스티밋: https://steemit.com/created/coinkorea/ 일반 블로그 비슷하지만 암호화폐 정보도 함께 공유
+
+(스티밋은 코인코리아와 협력관계에 있는 암호화폐 커뮤니티입니다. 관련글:https://steemit.com/kr/@coinkorea/steemit-kr-coinkorea )
 
 
 # 자료 
