@@ -20,8 +20,12 @@ pip3 install moviepy
 ## Conda
 ```bash
 # OpenCv 
-conda install -c https://conda.binstar.org/menpo opencv3 #conda install -c menpo opencv3=3.2.0
+python3 : conda install -c https://conda.binstar.org/menpo opencv3 #conda install -c menpo opencv3=3.2.0
+pytbon2 : pip install opencv_python
+
 # apt-get install libgtk2.0-0 #opencv에러시
+
+
 
 # Jupyter
 conda install -y ipython jupyter
