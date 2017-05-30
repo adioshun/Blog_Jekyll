@@ -19,7 +19,7 @@ sudo curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.
 [참고](https://nolboo.kim/blog/2015/08/21/oh-my-zsh/)
 
 
-## 원격 접속
+## xrdp 원격 접속
 
 #### GUI Desttop 환경설치
 ```
@@ -43,13 +43,12 @@ port=5900
 
 service xrdp restart
 ```
-
-### VNC
-Server side
+---
+### VNC  원격 접속
+###### Server side
 ```
 sudo apt-get install -y tightvncserver
 vncserver
-
 ```
 vim .vnc/xstartup
 
@@ -72,18 +71,20 @@ gnome-settings-daemon &
 gnome-panel &
 ```
 
-client side: `nc localhost 5901 #port open check`
-```
+###### client side
+- `nc localhost 5901 #port open check`
+---
+
 ### X11 Forwarding
-client Side
+
 ```
 # ~/.ssh/config file have these lines:
 Host *
   ForwardAgent yes
   ForwardX11 yes
+```
 
-
-### Server Side 
+###### Server Side 
 ```
 sudo apt-get install xauth
 vi /etc/ssh/sshd_config  # X11 관련 3줄 Uncomment
