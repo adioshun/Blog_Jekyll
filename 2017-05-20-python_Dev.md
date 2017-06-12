@@ -250,3 +250,13 @@ $ pip install torchvision
 $ pip install https://s3.amazonaws.com/pytorch/whl/cu80/torch-0.1.6.post22-cp35-cp35m-linux_x86_64.whl
 $ pip install torchvision
 ```
+
+## Visdom for PyTorch Visualization
+```bash
+pip install visdom
+python -m visdom.server
+```
+Open `http://localhost:8097`
+
+> 출처 : [Visdom github](https://github.com/facebookresearch/visdom)
+
