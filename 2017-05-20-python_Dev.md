@@ -1,5 +1,14 @@
 # Packages Installation
 
+## Anaconda Installation
+### 1. Python 3
+wget https://repo.continuum.io/archive/Anaconda3-4.4.0-Linux-x86_64.sh
+bash Anaconda3-4.4.0-Linux-x86_64.sh 
+
+### 2. Python 2
+wget https://repo.continuum.io/archive/Anaconda2-4.4.0-Linux-x86_64.sh
+bash Anaconda2-4.4.0-Linux-x86_64.sh 
+
 ## Pip
 ```bash
 apt-get install -y python3-pip python3-dev
