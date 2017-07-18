@@ -98,7 +98,8 @@ make distribute
 ```
 cd (caffe home)/python
 python
-import caffe
+import cv2 
+import caffe 
 ```
 
 > [Tutorial](http://caffe.berkeleyvision.org/gathered/examples/mnist.html)
@@ -136,6 +137,11 @@ cannot open shared object file lib hdf5_hl.so.10
 
 Cannot create Cublas handle. Cublas won't be available.
 
+libdc1394 error: Failed to initialize libdc1394 방지
+- 카메라관련모듈?? 무시
+
+No module named google.protobuf.internal 발생시
+- pip install protobuf
 
 (ffmpeg 에러 시)
 >> sudo add-apt-repository ppa:mc3man/trusty-media
