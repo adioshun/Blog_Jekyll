@@ -47,7 +47,7 @@ pytbon2 : pip install opencv_python
 
 - 기타패키지 : `conda install -y scipy matplotlib scikit-learn scikit-image keras pandas `
 
-
+> [주피터설정하기](https://github.com/adioshun/Blog_Jekyll/blob/master/2017-07-18_Jupyter_Installation.md)
 
 ###### 가상공간설정저장및불러오기
 
@@ -60,6 +60,27 @@ conda env export > environment.yml
 conda env create --file environment.yml --name CarND-Vehicle-Detection
 source activate CarND-Vehicle-Detection
 ```
+
+### GPU버젼 Tensorflow설치 [참고](http://goodtogreate.tistory.com/entry/TensorFlow-GPU-%EB%B2%84%EC%A0%84-%EC%9A%B0%EB%B6%84%ED%88%AC-1604%EC%97%90-%EC%84%A4%EC%B9%98-%ED%95%98%EA%B8%B0)
+
+CUDA installation
+- [외부링크참고](https://github.com/adioshun/Blog_Jekyll/blob/master/2017-07-18-CUDA_CuDNN_Installation.md)
+
+
+tensorflow, opencv, keras, etc. installation
+
+```bash
+apt-get install -y libcupti-dev  #에러발생 "/sbin/ldconfig.real: /usr/lib/nvidia-375/libEGL.so.1 is not a symbolic link"
+apt-get install -y python3-pip python3-dev
+pip3 install tensorflow-gpu
+pip3 install --upgrade pip
+```
+
+> libcudnn.so.5: cannot open shared object file 
+> - ldconfig -v 로해당라이브러리위치확인
+> - LD_LIBRARY_PATH="/usr/local/cuda-8.0/targets/x86_64-linux/lib
+> - export LD_LIBRARY_PATH
+> - echo $LD_LIBRARY_PATH
 
 #### Spyder remote kernel connection
 1. In jupyter run `%connect_info'
@@ -98,39 +119,7 @@ import better_exceptions
 ```
 > 참고 : https://github.com/Qix-/better-exceptions
 
-### GPU버젼 Tensorflow설치
 
-[참고](http://goodtogreate.tistory.com/entry/TensorFlow-GPU-%EB%B2%84%EC%A0%84-%EC%9A%B0%EB%B6%84%ED%88%AC-1604%EC%97%90-%EC%84%A4%EC%B9%98-%ED%95%98%EA%B8%B0)
-
-CUDA installation[외부링크참고](https://github.com/adioshun/Blog_Jekyll/blob/master/2017-07-18-CUDA_CuDNN_Installation.md)
-
-
-tensorflow, opencv, keras, etc. installation
-
-```bash
-apt-get install -y libcupti-dev  #에러발생 "/sbin/ldconfig.real: /usr/lib/nvidia-375/libEGL.so.1 is not a symbolic link"
-
-apt-get install -y python3-pip python3-dev
-
-pip3 install tensorflow-gpu
-
-pip3 install opencv_python ipython jupyter
-
-pip3 install --upgrade pip
-
-pip3 install -y scipy matplotlib scikit-learn scikit-image keras pandas
-
-```
-
-> libcudnn.so.5: cannot open shared object file 
-
-> ldconfig -v 로해당라이브러리위치확인
-
-> LD_LIBRARY_PATH="/usr/local/cuda-8.0/targets/x86_64-linux/lib
-
-> export LD_LIBRARY_PATH
-
-> echo $LD_LIBRARY_PATH
 
 
 
