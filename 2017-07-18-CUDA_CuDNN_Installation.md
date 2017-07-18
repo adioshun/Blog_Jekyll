@@ -1,3 +1,6 @@
+> [Nvidia Driver Instalation](http://moothink.tistory.com/entry/%EC%9A%B0%EB%B6%84%ED%88%AC-1404-nvidia-%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B2%84-%EC%84%A4%EC%B9%98)
+> cat /proc/driver/nvidia/version
+
 # Install CUDA Ubuntu 16.04
 CUDA installation
 
