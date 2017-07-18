@@ -9,33 +9,31 @@ http://caffe.berkeleyvision.org/install_apt.html
 - GPU
 
 
-1. General Dependencies
+## 1. General Dependencies
 >> sudo apt-get install libprotobuf-dev libleveldb-dev libsnappy-dev libopencv-dev libhdf5-serial-dev protobuf-compiler
 >> sudo apt-get install --no-install-recommends libboost-all-dev
 
-2. CUDA 설치
+## 2. CUDA 설치
 https://github.com/adioshun/Blog_Jekyll/blob/master/2017-07-18-CUDA_CuDNN_Installation.md
 
-3. BLAS 설치
+## 3. BLAS 설치
 여러 종류가 있지만 ATLAS를 설치하면 뒤에서 설정에 편리
 >> sudo apt-get install libatlas-base-dev 
 
-4. Python 설치 (Anaconda2 추천)
+## 4. Python 설치 (Anaconda2 추천)
 wget https://repo.continuum.io/archive/Anaconda2-4.4.0-Linux-x86_64.sh
 bash Anaconda2-4.4.0-Linux-x86_64.sh 
 
 
-5. Remaining dependencies, 14.04
+## 5. Remaining dependencies, 14.04
 >> sudo apt-get install libgflags-dev libgoogle-glog-dev liblmdb-dev
 
-출처: http://www.whydsp.org/337 [모두의연구소 기술블로그]
-
-6. OpenCV 설치 
+## 6. OpenCV 설치 
 
 OpenCV3는Dependency Error로Opencv2설치: `pip install opencv_python`
 
 
-7. Caffe 설치
+## 7. Caffe 설치
 - git clone, Makefile.config 파일복사
 ```bash 
 git clone https://github.com/BVLC/caffe.git  
@@ -54,20 +52,36 @@ USE_PKG_CONFIG := 1
 
 # (Anaconda 설치 시 python path는 주석처리 하고)
 ## Anaconda2
-ANACONDA_HOME:=$(HOME)/anaconda
+ANACONDA_HOME:=$(HOME)/anaconda2
 PYTHON_INCLUDE:=$(ANACONDA_HOME)/include \
-$(ANACONDA_HOME)/include/python2.7 \
-$(ANACONDA_HOME)/lib/python2.7/site-packages/numpy/core/include \
+  $(ANACONDA_HOME)/include/python2.7 \
+  $(ANACONDA_HOME)/lib/python2.7/site-packages/numpy/core/include \
 PYTHON_LIB := $(ANACONDA_HOME)/lib
 
-## Anaconda3
-ANACONDA_HOME:=$(HOME)/anaconda3
 
 
 ```
 
+## 8. Compile 
+make clean
+make all  (여기서 error가 많이 발생. 앞의 조건들 충족했는지 확인!)
+make test
+sudo gedit ~/.bashrc
+
+bashrc 문서 맨 아래에 다음을 추가
+export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/local/cuda/lib64"
+export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/home/hjlim99/anaconda2/lib"
+
+make runtest
 
 
+## 9. pycaffe
+
+make pycaffe
+sudo gedit ~/.bashrc
+
+bashrc 문서 맨 아래에 다음을 추가
+PYTHONPATH=/home/hjlim99/caffe/python:$PYTHONPATH
 
 
 
@@ -93,3 +107,13 @@ Pillow>=2.3.0
 six>=1.1.0
 
 출처: http://www.whydsp.org/337 [모두의연구소 기술블로그]
+
+---
+에러처리
+
+cannot open shared object file lib hdf5_hl.so.10
+- cd /usr/lib/x86_64-linux-gnu
+- sudo ln -s libhdf5_hl.so.7 libhdf5_hl.so.10
+- sudo ln -s libhdf5.so.7 libhdf5.so.10
+
+Cannot create Cublas handle. Cublas won't be available.
