@@ -151,7 +151,7 @@ import better_exceptions
 
 [참고](http://goodtogreate.tistory.com/entry/TensorFlow-GPU-%EB%B2%84%EC%A0%84-%EC%9A%B0%EB%B6%84%ED%88%AC-1604%EC%97%90-%EC%84%A4%EC%B9%98-%ED%95%98%EA%B8%B0)
 
-CUDA installation
+CUDA installation[외부링크참고](https://github.com/adioshun/Blog_Jekyll/blob/master/2017-07-18-CUDA_CuDNN_Installation.md)
 
 
 tensorflow, opencv, keras, etc. installation
