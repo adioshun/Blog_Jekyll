@@ -1,53 +1,54 @@
 # Packages Installation
 
+
+
+## Pip Installation
+```bash
+apt-get install -y python3-pip python3-dev
+pip3 install --upgrade pip
+```
+- OpenCV + jupyter
+```bash
+pip3 install opencv_python ipython jupyter
+```
+
+-Tensorflow 설치
+```bash
+export TF_BINARY_URL=https://storage.googleapis.com/tensorflow/linux/cpu/tensorflow-0.12.1-cp34-cp34m-linux_x86_64.whl
+pip3 install --ignore-installed --upgrade $TF_BINARY_URL
+```
+
+- 기타패키지:
+pip3 install scipy matplotlib scikit-learn scikit-image keras pandas
+pip3 install moviepy
+```
+
 ## Anaconda Installation
-### 1. Python 3
+- Python 3
 ```bash
 wget https://repo.continuum.io/archive/Anaconda3-4.4.0-Linux-x86_64.sh
 bash Anaconda3-4.4.0-Linux-x86_64.sh 
 ```
-### 2. Python 2
+- Python 2
 ```bash
 wget https://repo.continuum.io/archive/Anaconda2-4.4.0-Linux-x86_64.sh
 bash Anaconda2-4.4.0-Linux-x86_64.sh 
 ```
 
-## Pip
+- OpenCv 
 ```bash
-apt-get install -y python3-pip python3-dev
-pip3 install --upgrade pip
-
-#OpenCV + jupyter
-pip3 install opencv_python ipython jupyter 
-
-#Tensorflow 설치
-export TF_BINARY_URL=https://storage.googleapis.com/tensorflow/linux/cpu/tensorflow-0.12.1-cp34-cp34m-linux_x86_64.whl
-pip3 install --ignore-installed --upgrade $TF_BINARY_URL
-
-pip3 install scipy matplotlib scikit-learn scikit-image keras pandas
-pip3 install moviepy
-
-```
-
-## Conda
-```bash
-# OpenCv 
 python3 : conda install -c https://conda.binstar.org/menpo opencv3 #conda install -c menpo opencv3=3.2.0
 pytbon2 : pip install opencv_python
 
 # apt-get install libgtk2.0-0 #opencv에러시
-
-
-
-# Jupyter
-conda install -y ipython jupyter
-
-#Tensorflow 설치
-conda install -c conda-forge tensorflow
-
-conda install -y scipy matplotlib scikit-learn scikit-image keras pandas 
-pip install moviepy
 ```
+- Jupyter :`conda install -y ipython jupyter`
+
+- Tensorflow 설치:`conda install -c conda-forge tensorflow`
+
+- 기타패키지 : `conda install -y scipy matplotlib scikit-learn scikit-image keras pandas `
+
+
 
 ### Jupyter설정하기
 ```bash
