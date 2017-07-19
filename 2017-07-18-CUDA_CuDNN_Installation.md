@@ -1,13 +1,33 @@
 
 
-
-# 사전 작업 
+## 0. NVIDIA 드라이버 설치 
 - CUDA를 지원하는 nvidia [GPU확인](https://developer.nvidia.com/cuda-gpus)
 
 - nvidia graphic driver [설치](http://www.nvidia.com/Download/index.aspx?lang=en-us) 
 	- 드라이버확인 cat /proc/driver/nvidia/version
 	- [Nvidia Driver Instalation](http://moothink.tistory.com/entry/%EC%9A%B0%EB%B6%84%ED%88%AC-1404-nvidia-%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B2%84-%EC%84%A4%EC%B9%98) 
 
+
+### 0.1 For Ubuntu 14.04
+CUDA_REPO_PKG=http://developer.download.nvidia.com/compute/cuda/repos/ubuntu1404/x86_64/cuda-repo-ubuntu1404_8.0.61-1_amd64.deb
+ML_REPO_PKG=http://developer.download.nvidia.com/compute/machine-learning/repos/ubuntu1404/x86_64/nvidia-machine-learning-repo-ubuntu1404_4.0-2_amd64.deb
+
+### 0.2 For Ubuntu 16.04
+CUDA_REPO_PKG=http://developer.download.nvidia.com/compute/cuda/repos/ubuntu1604/x86_64/cuda-repo-ubuntu1604_8.0.61-1_amd64.deb
+ML_REPO_PKG=http://developer.download.nvidia.com/compute/machine-learning/repos/ubuntu1604/x86_64/nvidia-machine-learning-repo-ubuntu1604_1.0.0-1_amd64.deb
+
+### 0.3 Install repo packages
+wget "$CUDA_REPO_PKG" -O /tmp/cuda-repo.deb && sudo dpkg -i /tmp/cuda-repo.deb && rm -f /tmp/cuda-repo.deb
+wget "$ML_REPO_PKG" -O /tmp/ml-repo.deb && sudo dpkg -i /tmp/ml-repo.deb && rm -f /tmp/ml-repo.deb
+
+### 0.4 Download new list of packages
+sudo apt-get update
+
+|Apt-get 설치|
+|-|
+|apt-get install cuda|
+|This will install the latest toolkit  and the latest driver |
+|IMPORTANT: Don't install this package if you installed your driver with a run file. The Deb package may not be able to fully uninstall your run file driver installation.|
 
 
 ## 1. CUDA설치 
