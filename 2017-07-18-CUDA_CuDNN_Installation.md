@@ -8,20 +8,49 @@
 	- 드라이버확인 cat /proc/driver/nvidia/version
 	- [Nvidia Driver Instalation](http://moothink.tistory.com/entry/%EC%9A%B0%EB%B6%84%ED%88%AC-1404-nvidia-%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B2%84-%EC%84%A4%EC%B9%98) 
 
-# Install CUDA Ubuntu 16.04
-CUDA installation
 
-```bash
-apt-get update
-apt-get install wget vim
-wget https://developer.nvidia.com/compute/cuda/8.0/Prod2/local_installers/cuda-repo-ubuntu1604-8-0-local-ga2_8.0.61-1_amd64-deb #1.9G
-dpkg -i cuda-repo-ubuntu1604-8-0-local-ga2_8.0.61-1_amd64-deb
-apt-get update
-apt-get install cuda # 3699M
-apt-get install openssh-client #scp
+
+## 1. CUDA설치 
+
+### 1.0 사전 작업 
+```
+sudo apt-get install build-essential
+sudo apt-get update
+sudo apt-get install linux-generic (VM 사용시 설치) 
 ```
 
-cudaa installation
+### 1.1 CUDA 8 for Ubuntu16.04 x86
+Network 버젼 : `wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1604/x86_64/cuda-repo-ubuntu1604_8.0.61-1_amd64.deb`
+
+Local 버젼 : `wget https://developer.nvidia.com/compute/cuda/8.0/Prod2/local_installers/cuda-repo-ubuntu1604-8-0-local-ga2_8.0.61-1_amd64-deb` 1.9G
+
+```
+sudo dpkg -i cuda-repo-ubuntu1604_8.0.61-1_amd64.deb
+sudo apt-get update
+sudo apt-get install cuda
+```
+
+### 1.2 CUDA 8 for Ubuntu14.04 x86
+
+Network 버젼: `wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1404/x86_64/cuda-repo-ubuntu1404_8.0.61-1_amd64.deb`
+
+
+
+```
+sudo dpkg -i cuda-repo-ubuntu1404_8.0.61-1_amd64.deb
+sudo apt-get update
+sudo apt-get install cuda
+```
+
+### 1.3 사후 작업 
+```
+echo "export PATH=/usr/local/cuda/bin/:\$PATH; export LD_LIBRARY_PATH=/usr/local/cuda/lib64/:\$LD_LIBRARY_PATH; " >>~/.bashrc && source ~/.bashrc
+```
+
+
+## 2. cudaa 설치 
+
+### 2.1 소스코드 설치 
 - Download : https://developer.nvidia.com/cudnn ->  cuDNN 5.1 (August 10, 2016) for CUDA 8.0
 
 
@@ -33,22 +62,12 @@ tar cvzpf cudnn-8.0-linux-x64-v5.1.tgz ./
 cp -P cuda/include/cudnn.h /usr/local/cuda/include
 cp -P cuda/lib64/libcudnn* /usr/local/cuda/lib64
 chmod a+r /usr/local/cuda/include/cudnn.h /usr/local/cuda/lib64/libcudnn*
-
 ```
 
----
-# Install CUDA Ubuntu 14.04
-```bash
-sudo apt-get install build-essential
-sudo apt-get update
-sudo apt-get install linux-generic (VM 사용시 설치) 
-sudo wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1404/x86_64/cuda-repo-ubuntu1404_8.0.61-1_amd64.deb
-sudo dpkg -i cuda-repo-ubuntu1404_8.0.61-1_amd64.deb
-sudo apt-get update
-sudo apt-get install cuda
-echo "export PATH=/usr/local/cuda/bin/:\$PATH; export LD_LIBRARY_PATH=/usr/local/cuda/lib64/:\$LD_LIBRARY_PATH; " >>~/.bashrc && source ~/.bashrc
-```
-# Install CuDNN Ubuntu 14.04
+### 2.2 CuDNN Ubuntu 16.04
+
+### 2.3 CuDNN Ubuntu 14.04
+
 ```
 wget http://developer.download.nvidia.com/compute/redist/cudnn/v6.0/cudnn-8.0-linux-x64-v6.0.tgz
 sudo cp cuda/include/*.h /usr/local/cuda/include
