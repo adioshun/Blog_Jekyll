@@ -1,6 +1,39 @@
 
 > 출처 : Caffe 실습, SNU 패턴 인식 및 컴퓨터 지능 연구실, 박성헌, 황지혜, 유재영
 
+## 0. 개요 
+- Caffe : Convolutional Architecture for Fast Feature Embedding
+- Developed by the Berkeley Vision and Learning Center (BVLC)
+- Yangqing Jia, Evan Shelhamer, Travor Darrell
+
+### 0.1 특징 
+- Pure C++/CUDA architecture
+- Command line, Python, MATLAB interfaces
+- Fast, well-tested code
+- Pre-processing and deployment tools, reference models and examples
+- Image data management
+- Seamless GPU acceleration
+- Large community of contributors to the open-source project
+
+### 0.2 기능 
+Data pre-processing and management : `$CAFFE_ROOT/build/tools`
+
+#### A. Data ingest formats
+- LevelDB or LMDB database
+- In-memory (C++ and Python only)
+- HDF5
+- Image files
+
+#### B. Pre-processing tools
+- LevelDB/LMDB creation from raw images
+- Training and validation set creation with shuffling
+- Mean-image generation
+
+#### C. Data transformations
+Image cropping, resizing, scaling and mirroring
+Mean subtraction
+
+
 ## 1. 데이터 전처리 
 
 #### A. Dataset 준비하기
@@ -163,13 +196,82 @@ solver_mode: GPU
 
 ##### lenet_train_test.prototxt
 ```python
-cat lenet_train_test.prototxt
 name: "LeNet"
+
+
+######################################
+# 입력 데이터와 관련된 Layer (LevelDB data)
+#layer {
+#  name: "mnist"
+#  type: "Data"
+#  top: "data" #Input Layer는 top이 두개
+#  top: "label"#Input Layer는 top이 두개
+#  transform_param {
+#    scale: 0.00390625
+#    mean_file: mean_mnist.binaryproto #Mean file 빼기
+#  }
+#  data_param {
+#    source: "examples/mnist/mnist_train_leveldb" #LevelDB 경로
+#    batch_size: 64 #Batch size
+#    backend: LEVELDB
+#  }
+#  include {
+#    phase: TRAIN # Train과 test시에 쓸 데이터를 따로 지정가능
+#  }
+#}
+######################################
+
+######################################
+# 입력 데이터와 관련된 Layer ( Image data)
+# - 이미지를 변환하지 않고 바로 넣을 때 사용
+# - LevelDB 또는 LMDB를 이용할 때보다 속도 면에서 약간 느림
+#layer {
+#  name: "mnist"
+#  type: "Data"
+#  top: "data" #Input Layer는 top이 두개
+#  top: "label"#Input Layer는 top이 두개
+#  image_data_param {
+#	 shuffle: true #Shuffle 여부
+#	 source: "examples/mnist/dataList.txt" # Image list정보가 있는 파일, 
+#                                            levelDB만들때 입력으로 쓴 파일과 같은 형태
+#	 batch_size: 64
+#  }
+#  include {
+#    phase: TRAIN
+#  }
+#  transform_param {
+#    scale: 0.00390625
+#    mean_file: mean_mnist.binaryproto #Mean file 빼기
+#  }
+#  include: { phase: TRAIN } # Train과 test시에 쓸 데이터를 따로 지정가능
+#}
+######################################
+
+######################################
+# 입력 데이터와 관련된 Layer (HDF5 data)
+# - 영상 이외에 실수 형태의 데이터를 넣을 수 있음
+#layer {
+#  name: "mnist"
+#  type: "Data"
+#  top: "data" #Input Layer는 top이 두개
+#  top: "label"#Input Layer는 top이 두개
+#  hdf5_data_param {
+#    source: "examples/mnist/HDF5List.txt"
+#    batch_size: 64
+#  }
+#  transform_param {
+#    scale: 0.00390625
+#    mean_file: mean_mnist.binaryproto #Mean file 빼기
+#  }
+#  include: { phase: TRAIN } # Train과 test시에 쓸 데이터를 따로 지정가능
+#}
+######################################
+
 layer {
   name: "mnist"
   type: "Data"
-  top: "data"
-  top: "label"
+  top: "data" #Input Layer는 top이 두개
+  top: "label"#Input Layer는 top이 두개
   include {
     phase: TRAIN
   }
@@ -177,8 +279,8 @@ layer {
     scale: 0.00390625
   }
   data_param {
-    source: "examples/mnist/mnist_train_lmdb"
-    batch_size: 64
+    source: "examples/mnist/mnist_train_lmdb" #LevelDB 경로
+    batch_size: 64 #Batch size
     backend: LMDB
   }
 }
@@ -199,6 +301,8 @@ layer {
     backend: LMDB
   }
 }
+
+
 
 #################
 # Convolution Layer
