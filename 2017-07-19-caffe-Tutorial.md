@@ -1,27 +1,81 @@
-## 구성 
+
+## 1. 데이터 전처리 
+
+#### A. Dataset 준비하기
+- 파일과 라벨을 준비후 아래와 같은 텍스트 파일 만들기 
+```
+Subfolder1/file1.JPEG 7
+Subfolder2/file2.JPEG 3
+Subfolder3/file3.JPEG 4
+```
+
+- convert_imageset.bin –backend=“leveldb” –shuffle=true imageData/ imageList.txt imageData_levelDB
+  - 사용법: 실행파일.exe [FLAGS] ROOTFOLDER/ LISTFILE DB_NAME
+  - Label은 0부터 시작
+  - Shuffle, resize 등의 옵션을 활용
+
+#### B. Mean image 구하기 
+대부분의 경우 training, testing 시에 image data에서 mean image를 뺀다
+
+- compute_image_mean.bin –backend=“leveldb” imageData_levelDB mean_imageData.binaryproto
+  - 사용법: 실행파일.exe [FLAGS] INPUT_DB [OUTPUT_FILE]
+  - LevelDB 또는 LMDB를 이용해서 만듦
+  - 실행결과 binaryproto 파일이 생성됨
+  
+
+
+
+## 2. 설정 파일
 
 Training/Testing을 위해 보통 두 가지 파일을 정의함
-- Solver 정보를 담은 파일
-  - Gradient update를 어떻게 시킬 것인가에 대한 정보를 담음
-  - learning rate, weight decay 등의 parameter가 정의됨
-  - Test interval, snapshot 횟수 등 정의
-- Network 구조 정보를 담은 파일 : 실제 CNN 구조 정의 [[상세설명]](http://caffe.berkeleyvision.org/tutorial/layers.html)
-	- Net
-    	- Caffe에서 CNN (혹은 RNN 또는 일반 NN) 네트워크는 ‘Net’이라는 구조로 정의됨
-        - Net은 여러 개의 Layer 들이 연결된 구조 Directed Acyclic Graph(DAG) 구조만 만족하면 어떤 형태이든 training이 가능함
-	- Layer
-    	- CNN의 한 ‘층＇을 뜻함
-        - Convolution을 하는 Layer, Pooling을 하는 Layer, activation function을 통과하는 layer, input data layer, Loss를 계산하는 layer 등이 있음
-        - 소스코드에는 각 layer별로 Forward propagation, Backward propagation 방법이 CPU/GPU 버전별로 구현되어 있음
-     
-    - Blob
-    	- Layer를 통과하는 데이터 덩어리
-        - Image의 경우 주로 NxCxHxW 의 4차원 데이터가 사용됨 (N : Batch size, C :Channel Size, W : width, H : height)
+#### A. Solver 정보를 담은 파일
+- Gradient update를 어떻게 시킬 것인가에 대한 정보를 담음
+- learning rate, weight decay 등의 parameter가 정의됨
+- Test interval, snapshot 횟수 등 정의
+
+#### B. Network 구조 정보를 담은 파일 : 실제 CNN 구조 정의 [[상세설명]](http://caffe.berkeleyvision.org/tutorial/layers.html)
+- Net
+    - Caffe에서 CNN (혹은 RNN 또는 일반 NN) 네트워크는 ‘Net’이라는 구조로 정의됨
+    - Net은 여러 개의 Layer 들이 연결된 구조 Directed Acyclic Graph(DAG) 구조만 만족하면 어떤 형태이든 training이 가능함
+- Layer
+    - CNN의 한 ‘층＇을 뜻함
+    - Convolution을 하는 Layer, Pooling을 하는 Layer, activation function을 통과하는 layer, input data layer, Loss를 계산하는 layer 등이 있음
+    - 소스코드에는 각 layer별로 Forward propagation, Backward propagation 방법이 CPU/GPU 버전별로 구현되어 있음
+
+- Blob
+    - Layer를 통과하는 데이터 덩어리
+    - Image의 경우 주로 NxCxHxW 의 4차원 데이터가 사용됨 (N : Batch size, C :Channel Size, W : width, H : height)
         
 > 확장자가 .prototxt로 Google [Protocol Buffers](https://developers.google.com/protocol-buffers/) 기반 
 
 
-## 실습 
+## 3. 실행 
+
+#### A. Training
+- caffe train –solver=solver_file.prototxt (Ubuntu: caffe.bin)
+
+#### B. Testing
+- Backward propagation없이 forward propagation을 통한 결과값만 출력
+- caffe test –gpu=0 \
+			–iterations=100 \ #iterations 옵션만큼 iteration 수행
+            –weights=weight_file.caffemodel \ # 미리 학습된 weight 파일 (.caffemodel 확장자)
+            –model=net_model.prototxt  #model은 solver가 아닌 net파일을 입력으로 줘야 함
+
+## 4. Tip
+
+#### A. Training을 중간에 멈춘 뒤 이어서 하고 싶을때
+- Snapshot으로 남겨둔 solverstate파일을 이용 (-snapshot 옵션)
+- caffe train –solver=solver.prototxt -snapshot=lenet_iter_5000.solverstate
+
+#### B. Fine tuning / Transfer learning
+- Pre-trained model을 이용하는 방법
+- Snapshot으로 남겨둔 caffemodel파일을 이용 (-weights 옵션)
+- caffe train –solver=solver.prototxt –weights=lenet_iter_5000.caffemodel
+- Layer 이름을 비교해서 이름이 같은 Layer는 caffemodel파일에서 미리 training된 weight를 가져오고 새로운 layer는 새로 initialization을 해서 학습함.
+
+
+
+## 5. 실습 
 
 #### Datasets 준비 
 - cd $CAFFE_ROOT
