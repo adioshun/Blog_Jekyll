@@ -8,6 +8,8 @@ http://caffe.berkeleyvision.org/install_apt.html
 - OS: Ubuntu 14.04 LTS 
 - GPU
 
+|conda install -c anaconda caffe=1.0|
+|-|
 
 ## 1. General Dependencies
 ```
