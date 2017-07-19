@@ -108,7 +108,7 @@ Training/Testing을 위해 보통 두 가지 파일을 정의함
 - caffe train –solver=solver.prototxt –weights=lenet_iter_5000.caffemodel
 - Layer 이름을 비교해서 이름이 같은 Layer는 caffemodel파일에서 미리 training된 weight를 가져오고 새로운 layer는 새로 initialization을 해서 학습함.
 
-
+![](http://i.imgur.com/OXAJisv.png)
 
 ## 5. 실습  : MNIST
 
