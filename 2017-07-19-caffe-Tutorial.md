@@ -75,20 +75,49 @@ Training/Testing을 위해 보통 두 가지 파일을 정의함
 
 
 
-## 5. 실습 
+## 5. 실습  : MNIST
 
-#### Datasets 준비 
+#### A. Datasets 준비 
 - cd $CAFFE_ROOT
 - ./data/mnist/get_mnist.sh 
 	- 파일 다운로드 : t10k-images-idx3-ubyte, t10k-labels-idx1-ubyte,  train-images-idx3-ubyte,  train-labels-idx1-ubyte
 - ./examples/mnist/create_mnist.sh
 	- 파일 변환/생성 : mnist_test_lmdb, mnist_train_lmdb
-#### 실행
+
+#### B. 실행
 - ./build/tools/caffe train --solver=examples/mnist/lenet_solver.prototxt
 
 > CPU 버전일 경우 lenet_solver.prototxt 의 solver mode를 CPU로 변경
 
 > 로그파일 : /tmp 
+
+
+## 6. 실습 : Image classification using AlexNet
+```
+layer {
+  name: "data"
+  type: "Input"
+  top: "data"
+  input_param { shape: { dim: 10 dim: 3 dim: 227 dim: 227 } }
+}
+```
+
+
+classification 프로젝트 빌드
+```bash
+build/examples/cpp_classification/classification.bin 
+	models/bvlc_alexnet/deploy.prototxt 
+    models/bvlc_alexnet/bvlc_alexnet.caffemodel
+    data/ilsvrc12/imagenet_mean.binaryproto
+    data/ilsvrc12/synset_words.txt data/ilsvrc12/test_image.jpg
+
+```
+- deploy.prototxt : network model 파일. 임의의 입력을 다룰 때 사용.
+- alexnet.caffemodel : 미리 학습 된 Alexnet 학습 모델.
+- mean.binaryproto: imagenet dataset mean file.
+- label.txt: class label 정보를 담고 있는 txt 파일
+- test.jpg: test 할 이미지 파일
+
 
 ---
 
