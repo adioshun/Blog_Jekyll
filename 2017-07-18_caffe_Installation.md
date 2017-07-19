@@ -8,9 +8,13 @@ http://caffe.berkeleyvision.org/install_apt.html
 - OS: Ubuntu 14.04 LTS 
 - GPU
 
-|conda install -c anaconda caffe=1.0|
-|-|
+# Conda 이용하여 설치 하기 
+```
+conda install -c anaconda caffe=1.0
+```
+> Python에서 Import caffe만 가능하고, tool들은 사용 못한것 같음 
 
+# Source code설치 
 ## 1. General Dependencies
 ```
 sudo apt-get install libprotobuf-dev libleveldb-dev libsnappy-dev libopencv-dev libhdf5-serial-dev protobuf-compiler
@@ -155,5 +159,9 @@ No module named google.protobuf.internal 발생시
 >> export CPLUS_INCLUDE_PATH=/usr/include/python2.7
 >> make all –j8
 
+Ubuntu 15.04 이상 버전에서 hdf5.h: No such file or directory 에러 메시지가 발생하면
+Make.config 파일의 INCLUDE_DIRS, LIBRARY_DIRS를 다음과 같이 수정
+- INCLUDE_DIRS := $(PYTHON_INCLUDE) /usr/local/include /usr/include/hdf5/serial/
+- LIBRARY_DIRS := $(PYTHON_LIB) /usr/local/lib /usr/lib /usr/lib/x86_64-linux-gnu/hdf5/serial/
 
 출처: http://www.whydsp.org/337 [모두의연구소 기술블로그]
