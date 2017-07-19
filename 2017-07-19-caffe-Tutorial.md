@@ -118,7 +118,7 @@ build/examples/cpp_classification/classification.bin
 - label.txt: class label 정보를 담고 있는 txt 파일
 - test.jpg: test 할 이미지 파일
 
-
+> 다른 모델들은 [Model Zoo](https://github.com/BVLC/caffe/wiki/Model-Zoo)참고 : prototxt파일 형태로 있어 참고하기 좋음
 ---
 
 ###### lenet_solver.prototxt
