@@ -67,6 +67,8 @@ sudo apt-get install cuda
 echo "export PATH=/usr/local/cuda/bin/:\$PATH; export LD_LIBRARY_PATH=/usr/local/cuda/lib64/:\$LD_LIBRARY_PATH; " >>~/.bashrc && source ~/.bashrc
 ```
 
+CUDA설치 확인 : nvcc -v
+
 
 ## 2. cudaa 설치 
 
