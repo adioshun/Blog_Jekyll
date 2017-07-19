@@ -14,6 +14,16 @@ conda install -c anaconda caffe=1.0
 ```
 > Python에서 Import caffe만 가능하고, tool들은 사용 못한것 같음 
 
+# Docker 이용하여 설치 하기 
+```bash
+docker pull haje01/caffe 
+docker run -dit --name caffe haje01/caffe
+docker exec -ti caffe bash
+```
+caffe 실행 코드는 `/opt/caffe`에 존재 
+
+> 참고 :[Docker로 Caffe 실습하기](https://gist.github.com/haje01/0fb6d63bf065c9831256)
+
 # Source code설치 
 ## 1. General Dependencies
 ```
