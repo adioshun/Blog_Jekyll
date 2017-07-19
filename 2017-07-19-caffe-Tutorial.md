@@ -1,24 +1,11 @@
-## 실습 
-
-Datasets
-- cd $CAFFE_ROOT
-- ./data/mnist/get_mnist.sh 
-	- 파일 다운로드 : t10k-images-idx3-ubyte, t10k-labels-idx1-ubyte,  train-images-idx3-ubyte,  train-labels-idx1-ubyte
-- ./examples/mnist/create_mnist.sh
-	- 파일 변환/생성 : mnist_test_lmdb, mnist_train_lmdb
-실행
-- ./build/tools/caffe train --solver=examples/mnist/lenet_solver.prototxt
-> CPU 버전일 경우 lenet_solver.prototxt 의 solver mode를 CPU로 변경
-
-로그파일 
-- /tmp 
+## 구성 
 
 Training/Testing을 위해 보통 두 가지 파일을 정의함
 - Solver 정보를 담은 파일
   - Gradient update를 어떻게 시킬 것인가에 대한 정보를 담음
   - learning rate, weight decay 등의 parameter가 정의됨
   - Test interval, snapshot 횟수 등 정의
-- Network 구조 정보를 담은 파일 : 실제 CNN 구조 정의
+- Network 구조 정보를 담은 파일 : 실제 CNN 구조 정의 [[상세설명]](http://caffe.berkeleyvision.org/tutorial/layers.html)
 	- Net
     	- Caffe에서 CNN (혹은 RNN 또는 일반 NN) 네트워크는 ‘Net’이라는 구조로 정의됨
         - Net은 여러 개의 Layer 들이 연결된 구조 Directed Acyclic Graph(DAG) 구조만 만족하면 어떤 형태이든 training이 가능함
@@ -26,17 +13,72 @@ Training/Testing을 위해 보통 두 가지 파일을 정의함
     	- CNN의 한 ‘층＇을 뜻함
         - Convolution을 하는 Layer, Pooling을 하는 Layer, activation function을 통과하는 layer, input data layer, Loss를 계산하는 layer 등이 있음
         - 소스코드에는 각 layer별로 Forward propagation, Backward propagation 방법이 CPU/GPU 버전별로 구현되어 있음
-     - Blob
-     	-  Layer를 통과하는 데이터 덩어리
+     
+    - Blob
+    	- Layer를 통과하는 데이터 덩어리
         - Image의 경우 주로 NxCxHxW 의 4차원 데이터가 사용됨 (N : Batch size, C :Channel Size, W : width, H : height)
         
-- 확장자가 .prototxt 파일로 만들어야 함
-- Google [Protocol Buffers](https://developers.google.com/protocol-buffers/) 기반 
+> 확장자가 .prototxt로 Google [Protocol Buffers](https://developers.google.com/protocol-buffers/) 기반 
+
+
+## 실습 
+
+#### Datasets 준비 
+- cd $CAFFE_ROOT
+- ./data/mnist/get_mnist.sh 
+	- 파일 다운로드 : t10k-images-idx3-ubyte, t10k-labels-idx1-ubyte,  train-images-idx3-ubyte,  train-labels-idx1-ubyte
+- ./examples/mnist/create_mnist.sh
+	- 파일 변환/생성 : mnist_test_lmdb, mnist_train_lmdb
+#### 실행
+- ./build/tools/caffe train --solver=examples/mnist/lenet_solver.prototxt
+
+> CPU 버전일 경우 lenet_solver.prototxt 의 solver mode를 CPU로 변경
+
+> 로그파일 : /tmp 
 
 ---
 
+###### lenet_solver.prototxt
+```bash
+# The train/test net protocol buffer definition 
+net: "examples/mnist/lenet_train_test.prototxt" # Net 구조를 정의한 prototxt 파일
+
+# test_iter specifies how many forward passes the test should carry out.
+# In the case of MNIST, we have test batch size 100 and 100 test iterations,
+# covering the full 10,000 testing images.
+test_iter: 100  # Test시에 iteration 횟수. Test_iter x batch_size만큼 test를 함
+
+# Carry out testing every 500 training iterations.
+test_interval: 500 #몇번 iteration돌때마다 test를 할 것인가?
+
+# The base learning rate, momentum and the weight decay of the network.
+# type: "SGD" # Solver type
+base_lr: 0.01 # Learning rate
+momentum: 0.9 # momentum
+weight_decay: 0.0005 # Weight decay
+
+# The learning rate policy
+lr_policy: "inv" # Learning rate 변화를 어떻게 시킬 것인가
+gamma: 0.0001
+power: 0.75
+
+# Display every 100 iterations
+display: 100 #Loss를 보여주는 iteration 횟수
+
+# The maximum number of iterations
+max_iter: 10000 # 총 training iteration 수
+
+# snapshot intermediate results
+snapshot: 5000 # Iteration 횟수마다 기록을 남김
+snapshot_prefix: "examples/mnist/lenet" # 프리픽스.caffemodel과 프리픽스.solverstate파일이 생성됨 
+
+# solver mode: CPU or GPU
+solver_mode: GPU
+```
+
 ##### lenet_train_test.prototxt
-```bahs 
+```python
+cat lenet_train_test.prototxt
 name: "LeNet"
 layer {
   name: "mnist"
@@ -72,33 +114,151 @@ layer {
     backend: LMDB
   }
 }
+
+#################
+# Convolution Layer
+# Input size (i1xi2xi3)
+# Output size (o1xo2xo3)
+# Filter size (f1xf2)
+# 학습할 parameter 수: o3xi3xf1xf2
+###############
+layer {
+  name: "conv1"
+  type: "Convolution"  #Convolution Layer
+  bottom: "data"
+  top: "conv1"
+  # Layer별로 Learning rate를 다르게 조정가능. 
+  # Solver에서 정한 learning rate에 곱해진 값이 해당 layer의 learning rate가 됨
+  param {       
+    lr_mult: 1 #첫번째는 weight에 대한 learning rate    
+  }
+  param {
+    lr_mult: 2 #두번째는 bias에 대한 learning rate
+  }
+  convolution_param {
+    num_output: 20 # Convolution후 output으로 나오는 feature map 개수 
+    			   # o1 = (i1 + 2 x pad_size – f1) / stride + 1
+    kernel_size: 5 # Convolution에 쓰이는 filter의 크기
+    stride: 1      # Stride 설정
+    #pad: 1		   # Padding 설정
+    weight_filler { # Weight에 대한 initialization
+      type: "xavier" #Gaussian도 많이 쓰임
+    }
+    bias_filler { #Bias에 대한 initialization
+      type: "constant"  # Constant의 경우 value를 함께 지정 가능 , Default 0
+    }
+  }
+}
+layer {
+  name: "pool1"  
+  type: "Pooling"  # Pooling Layer
+  bottom: "conv1"
+  top: "pool1"
+  pooling_param {
+    pool: MAX       # Max, mean, stochastic 가능
+    kernel_size: 2
+    stride: 2
+  }
+}
+layer {
+  name: "conv2"
+  type: "Convolution"
+  bottom: "pool1"
+  top: "conv2"
+  param {
+    lr_mult: 1
+  }
+  param {
+    lr_mult: 2
+  }
+  convolution_param {
+    num_output: 50
+    kernel_size: 5
+    stride: 1
+    weight_filler {
+      type: "xavier"
+    }
+    bias_filler {
+      type: "constant"
+    }
+  }
+}
+layer {
+  name: "pool2"
+  type: "Pooling"
+  bottom: "conv2"
+  top: "pool2"
+  pooling_param {
+    pool: MAX
+    kernel_size: 2
+    stride: 2
+  }
+}
+layer {
+  name: "ip1"
+  type: "InnerProduct"  # Fully connected layer
+  bottom: "pool2"
+  top: "ip1"
+  param {
+    lr_mult: 1
+  }
+  param {
+    lr_mult: 2
+  }
+  inner_product_param {
+    num_output: 500  # Fully connected layer output 뉴런 개수
+    weight_filler {
+      type: "xavier"  # Initialization 
+    }
+    bias_filler {
+      type: "constant"
+    }
+  }
+}
+layer {
+  name: "relu1"  #Activation Layer
+  type: "ReLU"   # RELU, sigmoid, tanH 등 가능 (RELU는 negative_slope 설정 가능)
+  bottom: "ip1"
+  top: "ip1"
+}
+layer {
+  name: "ip2"
+  type: "InnerProduct"
+  bottom: "ip1"
+  top: "ip2"
+  param {
+    lr_mult: 1
+  }
+  param {
+    lr_mult: 2
+  }
+  inner_product_param {
+    num_output: 10
+    weight_filler {
+      type: "xavier"
+    }
+    bias_filler {
+      type: "constant"
+    }
+  }
+}
+layer {
+  name: "accuracy" 			# Accuracy layer : Test 시에 Accuracy를 표시하기 위해 주로 사용
+  type: "Accuracy"
+  bottom: "ip2"
+  bottom: "label"
+  top: "accuracy"
+  include {
+    phase: TEST
+  }
+}
+layer {
+  name: "loss"               #Loss layer : 가장 마지막 layer로 label과 비교해서 loss를 계산함
+  type: "SoftmaxWithLoss"  
+  bottom: "ip2"    # Loss Layer는 bottom이 두개   
+  bottom: "label"  # Loss Layer는 bottom이 두개
+  top: "loss"
+}
 ```
 
-###### lenet_solver.prototxt
-```bash
-# The train/test net protocol buffer definition
-net: "examples/mnist/lenet_train_test.prototxt"
-# test_iter specifies how many forward passes the test should carry out.
-# In the case of MNIST, we have test batch size 100 and 100 test iterations,
-# covering the full 10,000 testing images.
-test_iter: 100
-# Carry out testing every 500 training iterations.
-test_interval: 500
-# The base learning rate, momentum and the weight decay of the network.
-base_lr: 0.01
-momentum: 0.9
-weight_decay: 0.0005
-# The learning rate policy
-lr_policy: "inv"
-gamma: 0.0001
-power: 0.75
-# Display every 100 iterations
-display: 100
-# The maximum number of iterations
-max_iter: 10000
-# snapshot intermediate results
-snapshot: 5000
-snapshot_prefix: "examples/mnist/lenet"
-# solver mode: CPU or GPU
-solver_mode: GPU
-```
+
