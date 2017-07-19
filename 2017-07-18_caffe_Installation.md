@@ -30,6 +30,10 @@ caffe 실행 코드는 `/opt/caffe`에 존재
 sudo apt-get install libprotobuf-dev libleveldb-dev libsnappy-dev libopencv-dev libhdf5-serial-dev protobuf-compiler
 sudo apt-get install --no-install-recommends libboost-all-dev
 ```
+Or
+```
+sudo apt-get install libprotobuf-dev libleveldb-dev libsnappy-dev libopencv-dev libboost-all-dev libhdf5-serial-dev libgflags-dev libgoogle-glog-dev liblmdb-dev protobuf-compiler libatlas-base-dev python-dev git --no-install-recommends libboost-all-dev python-numpy
+```
 
 ## 2. CUDA 설치
 https://github.com/adioshun/Blog_Jekyll/blob/master/2017-07-18-CUDA_CuDNN_Installation.md
@@ -110,7 +114,7 @@ PYTHONPATH=/home/hjlim99/caffe/python:$PYTHONPATH
 make distribute
 ```
 
-## 설치확인
+## 11. 설치확인
 ```
 cd (caffe home)/python
 python
@@ -119,6 +123,8 @@ import caffe
 ```
 
 > [Tutorial](http://caffe.berkeleyvision.org/gathered/examples/mnist.html)
+
+
 
 
 
