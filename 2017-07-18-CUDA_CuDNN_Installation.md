@@ -33,14 +33,7 @@ ML_REPO_PKG=http://developer.download.nvidia.com/compute/machine-learning/repos/
 wget "$CUDA_REPO_PKG" -O /tmp/cuda-repo.deb && sudo dpkg -i /tmp/cuda-repo.deb && rm -f /tmp/cuda-repo.deb
 wget "$ML_REPO_PKG" -O /tmp/ml-repo.deb && sudo dpkg -i /tmp/ml-repo.deb && rm -f /tmp/ml-repo.deb
 ```
-### 0.4 Download new list of packages
-sudo apt-get update
 
-|Apt-get 설치|
-|-|
-|apt-get install cuda|
-|This will install the latest toolkit  and the latest driver |
-|IMPORTANT: Don't install this package if you installed your driver with a run file. The Deb package may not be able to fully uninstall your run file driver installation.|
 
 
 ## 1. CUDA설치 
@@ -51,6 +44,15 @@ sudo apt-get install build-essential
 sudo apt-get update
 sudo apt-get install linux-generic (VM 사용시 설치) 
 ```
+
+### 1.1 CUDA by apt-get install 
+sudo apt-get update
+
+|Apt-get 설치|
+|-|
+|apt-get install cuda|
+|This will install the latest toolkit  and the latest driver |
+|IMPORTANT: Don't install this package if you installed your driver with a run file. The Deb package may not be able to fully uninstall your run file driver installation.|
 
 ### 1.1 CUDA 8 for Ubuntu16.04 x86
 Network 버젼 : `wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1604/x86_64/cuda-repo-ubuntu1604_8.0.61-1_amd64.deb`
@@ -83,7 +85,7 @@ echo "export PATH=/usr/local/cuda/bin/:\$PATH; export LD_LIBRARY_PATH=/usr/local
 CUDA설치 확인 : nvcc -v
 
 
-## 2. cudaa 설치 
+## 2. cuDNN 설치 
 
 ### 2.1 소스코드 설치 
 - Download : https://developer.nvidia.com/cudnn ->  cuDNN 5.1 (August 10, 2016) for CUDA 8.0
