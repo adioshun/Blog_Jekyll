@@ -7,6 +7,16 @@
 	- 드라이버확인 cat /proc/driver/nvidia/version
 	- [Nvidia Driver Instalation](http://moothink.tistory.com/entry/%EC%9A%B0%EB%B6%84%ED%88%AC-1404-nvidia-%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B2%84-%EC%84%A4%EC%B9%98) 
 
+### 0.0 
+```
+sudo add-apt-repository -y ppa:xorg-edgers/ppa -y
+sudo apt-get update
+sudo apt-get install nvidia-current
+
+
+출처: http://moothink.tistory.com/entry/우분투-1404-nvidia-드라이버-설치 [끄적임]
+```
+
 
 ### 0.1 For Ubuntu 14.04
 ```
