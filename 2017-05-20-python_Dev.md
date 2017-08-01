@@ -9,11 +9,11 @@ pip3 install --upgrade pip
 pip3 install opencv_python ipython jupyter
 ```
 
-~~-Tensorflow 설치
+-Tensorflow 설치
 ```bash
 export TF_BINARY_URL=https://storage.googleapis.com/tensorflow/linux/cpu/tensorflow-0.12.1-cp34-cp34m-linux_x86_64.whl
 pip3 install --ignore-installed --upgrade $TF_BINARY_URL
-```~~(Gitbook으로이동)
+```
 
 - 기타패키지:
 ```bash
@@ -43,7 +43,7 @@ pytbon2 : pip install opencv_python
 ```
 - Jupyter :`conda install -y ipython jupyter`
 
-~~- Tensorflow 설치:`conda install -c conda-forge tensorflow`~~(Gitbook으로이동)
+- Tensorflow 설치:`conda install -c conda-forge tensorflow`
 
 - 기타패키지 : `conda install -y scipy matplotlib scikit-learn scikit-image keras pandas `
 
