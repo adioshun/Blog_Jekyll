@@ -5,7 +5,7 @@
 
 - nvidia graphic driver [설치](http://www.nvidia.com/Download/index.aspx?lang=en-us) 
 	- 드라이버확인 cat /proc/driver/nvidia/version
-	- at latest NVIDIA driver is installed a
+	- nvidia-smi -i 3 -l -q -d
 	- [Nvidia Driver Instalation](https://goo.gl/kfzWfJ) 
 
 ### 0.0 
