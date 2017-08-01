@@ -88,28 +88,15 @@ CUDA설치 확인 : nvcc -v
 
 ## 2. cuDNN 설치 
 
-### 2.1 소스코드 설치 
+### 2.1 소스코드 설치 cuDNN v6.0 Library for Linux
 - Download : https://developer.nvidia.com/cudnn ->  cuDNN 5.1 (August 10, 2016) for CUDA 8.0
-
-
-```bash
-
-wget tar cvzpf cudnn-8.0-linux-x64-v5.1.tgz /
-tar cvzpf cudnn-8.0-linux-x64-v5.1.tgz ./
-
-cp -P cuda/include/cudnn.h /usr/local/cuda/include
-cp -P cuda/lib64/libcudnn* /usr/local/cuda/lib64
-chmod a+r /usr/local/cuda/include/cudnn.h /usr/local/cuda/lib64/libcudnn*
-```
-
-### 2.2 CuDNN Ubuntu 16.04
-
-### 2.3 CuDNN Ubuntu 14.04
 
 ```
 wget http://developer.download.nvidia.com/compute/redist/cudnn/v6.0/cudnn-8.0-linux-x64-v6.0.tgz
-sudo cp cuda/include/*.h /usr/local/cuda/include
-sudo cp cuda/lib64/*.so* /usr/local/cuda/lib64
+tar cvzpf cudnn-8.0-linux-x64-v5.1.tgz ./
+
+sudo cp -P cuda/include/*.h /usr/local/cuda/include
+sudo cp cuda/lib64/*.so* /usr/local/cuda/lib64  OR cp -P cuda/lib64/libcudnn* /usr/local/cuda/lib64
 sudo chmod a+r /usr/local/cuda/include/cudnn.h /usr/local/cuda/lib64/libcudnn*
 sudo apt-get install libcupti-dev
 ```
