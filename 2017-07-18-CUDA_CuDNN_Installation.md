@@ -1,5 +1,35 @@
+# Driver & CUDA install script 
+
+Ubuntu 16.04 LTS or 16.10 - CUDA 8 with latest driver:
+```bash
+#!/bin/bash
+echo "Checking for CUDA and installing."
+# Check for CUDA and try to install.
+if ! dpkg-query -W cuda; then
+  # The 16.04 installer works with 16.10.
+  curl -O http://developer.download.nvidia.com/compute/cuda/repos/ubuntu1604/x86_64/cuda-repo-ubuntu1604_8.0.61-1_amd64.deb
+  dpkg -i ./cuda-repo-ubuntu1604_8.0.61-1_amd64.deb
+  apt-get update
+  apt-get install cuda -y
+fi
+```
+Ubuntu 14.04 LTS - CUDA 8 with latest driver:
+```bahs 
+#!/bin/bash
+echo "Checking for CUDA and installing."
+# Check for CUDA and try to install.
+if ! dpkg-query -W cuda; then
+  curl -O http://developer.download.nvidia.com/compute/cuda/repos/ubuntu1404/x86_64/cuda-repo-ubuntu1404_8.0.61-1_amd64.deb
+  dpkg -i ./cuda-repo-ubuntu1404_8.0.61-1_amd64.deb
+  apt-get update
+  apt-get install cuda -y
+  apt-get install linux-headers-$(uname -r) -y
+fi
+```
 
 
+
+---
 ## 0. NVIDIA 드라이버 설치 
 - CUDA를 지원하는 nvidia [GPU확인](https://developer.nvidia.com/cuda-gpus)
 
@@ -36,35 +66,9 @@ wget "$CUDA_REPO_PKG" -O /tmp/cuda-repo.deb && sudo dpkg -i /tmp/cuda-repo.deb &
 wget "$ML_REPO_PKG" -O /tmp/ml-repo.deb && sudo dpkg -i /tmp/ml-repo.deb && rm -f /tmp/ml-repo.deb
 ```
 
-
+---
 
 ## 1. CUDA설치 
-Ubuntu 16.04 LTS or 16.10 - CUDA 8 with latest driver:
-```bash
-#!/bin/bash
-echo "Checking for CUDA and installing."
-# Check for CUDA and try to install.
-if ! dpkg-query -W cuda; then
-  # The 16.04 installer works with 16.10.
-  curl -O http://developer.download.nvidia.com/compute/cuda/repos/ubuntu1604/x86_64/cuda-repo-ubuntu1604_8.0.61-1_amd64.deb
-  dpkg -i ./cuda-repo-ubuntu1604_8.0.61-1_amd64.deb
-  apt-get update
-  apt-get install cuda -y
-fi
-```
-Ubuntu 14.04 LTS - CUDA 8 with latest driver:
-```bahs 
-#!/bin/bash
-echo "Checking for CUDA and installing."
-# Check for CUDA and try to install.
-if ! dpkg-query -W cuda; then
-  curl -O http://developer.download.nvidia.com/compute/cuda/repos/ubuntu1404/x86_64/cuda-repo-ubuntu1404_8.0.61-1_amd64.deb
-  dpkg -i ./cuda-repo-ubuntu1404_8.0.61-1_amd64.deb
-  apt-get update
-  apt-get install cuda -y
-  apt-get install linux-headers-$(uname -r) -y
-fi
-```
 
 
 ### 1.0 사전 작업 
@@ -113,7 +117,7 @@ echo "export PATH=/usr/local/cuda/bin/:\$PATH; export LD_LIBRARY_PATH=/usr/local
 
 CUDA설치 확인 : nvcc -v
 
-
+---
 ## 2. cuDNN 설치 
 
 ### 2.1 소스코드 설치 cuDNN v6.0 Library for Linux
