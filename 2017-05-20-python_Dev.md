@@ -61,6 +61,23 @@ conda env create --file environment.yml --name CarND-Vehicle-Detection
 source activate CarND-Vehicle-Detection
 ```
 
+### requirement.txt 파일이용하여한번에설치하기
+
+```
+Cython>=0.19.2
+numpy>=1.7.1
+...
+pyyaml>=3.10
+Pillow>=2.3.0
+```
+
+
+pip :`for req in $(cat requirements.txt); do pip install $req | cut -d ">" -f1; done`
+conda : `while read requirement; do conda install --yes $requirement; done < requirements.txt`
+
+출처: http://goodtogreate.tistory.com/entry/FasterRCNN-Install-on-Ubuntu-1604GTX1080-CUDA-80cuDNN-51 [GOOD to GREAT]
+
+
 ### GPU버젼 Tensorflow설치 [참고](http://goodtogreate.tistory.com/entry/TensorFlow-GPU-%EB%B2%84%EC%A0%84-%EC%9A%B0%EB%B6%84%ED%88%AC-1604%EC%97%90-%EC%84%A4%EC%B9%98-%ED%95%98%EA%B8%B0)
 
 CUDA installation
