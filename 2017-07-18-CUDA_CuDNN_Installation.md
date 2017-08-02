@@ -6,6 +6,7 @@
 - nvidia graphic driver [설치](http://www.nvidia.com/Download/index.aspx?lang=en-us) 
 	- 드라이버확인 cat /proc/driver/nvidia/version
 	- nvidia-smi -i 3 -l -q -d
+	- sudo apt-get install nmon
 	- [Nvidia Driver Instalation](https://goo.gl/kfzWfJ) 
 
 ### 0.0 
