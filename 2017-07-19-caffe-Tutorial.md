@@ -1,10 +1,14 @@
+|알림|
+|-|
+|Gitbook에 관리함(https://www.gitbook.com/book/adioshun/dl_framework),20170803]
 
-> 출처 : Caffe 실습, SNU 패턴 인식 및 컴퓨터 지능 연구실, 박성헌, 황지혜, 유재영
 
 ## 0. 개요 
 - Caffe : Convolutional Architecture for Fast Feature Embedding
 - Developed by the Berkeley Vision and Learning Center (BVLC)
 - Yangqing Jia, Evan Shelhamer, Travor Darrell
+
+> 출처 : Caffe 실습, SNU 패턴 인식 및 컴퓨터 지능 연구실, 박성헌, 황지혜, 유재영
 
 ### 0.1 특징 
 - Pure C++/CUDA architecture
