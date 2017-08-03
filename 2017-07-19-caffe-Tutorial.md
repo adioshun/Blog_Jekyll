@@ -1,6 +1,6 @@
 |알림|
 |-|
-|Gitbook에 관리함(https://www.gitbook.com/book/adioshun/dl_framework),20170803]
+|Gitbook에 관리함](https://www.gitbook.com/book/adioshun/dl_framework),20170803|
 
 
 ## 0. 개요 
