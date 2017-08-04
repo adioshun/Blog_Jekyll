@@ -1,7 +1,7 @@
 ### Jupyter Configuration
 
 ```bash
-jupyter notebook --generate-config
+jupyter notebook --generate-config --allow-root
 vi /root/.jupyter/jupyter_notebook_config.py
 ```
 `jupyter_notebook_config.py` 설정파일
@@ -13,6 +13,8 @@ c.NotebookApp.port = 8585 # L213 포트를 설정해준다. 기본포트로 8888
 c.NotebookApp.password = 'sha1:a8dee43a3a44:b18f1ad149a60efb4838da44cf127985d64a5e70' # L210 python 실행후 from notebook.auth import passwd; passwd\(\)
 c.NotebookApp.notebook_dir = '/home/adioshun/Jupyter' # L195 기본 디렉터리를 지정시켜준다.
 ```
+
+> 실행:jupyter notebook --allow-root
 
 jupyter 테마: [#1](https://github.com/powerpak/jupyter-dark-theme), [#2](http://haanjack.github.io/jupyter/theme/2016/03/08/jupyter-theme.html), [#3](https://github.com/dunovank/jupyter-themes)
 
