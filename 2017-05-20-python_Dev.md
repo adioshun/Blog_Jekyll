@@ -1,3 +1,11 @@
+## version print
+```
+print "OS:     ", platform.platform()
+print "Python: ", sys.version.split("\n")[0]
+print "CUDA:   ", subprocess.Popen(["nvcc","--version"], stdout=subprocess.PIPE).communicate()[0].split("\n")[3]
+print "LMDB:   ", ".".join([str(i) for i in lmdb.version()])
+```
+
 ## Pip based Installation
 
 ```bash
