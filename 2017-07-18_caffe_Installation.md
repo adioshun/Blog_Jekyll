@@ -14,6 +14,8 @@ http://caffe.berkeleyvision.org/install_apt.html
 
 # Conda 이용하여 설치 하기 
 ```
+conda create -n pycffe python=2.7 #2017.03 현 python2 지원
+source activate pycaffe
 conda install -c anaconda caffe=1.0
 ```
 
