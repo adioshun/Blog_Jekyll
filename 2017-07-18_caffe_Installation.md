@@ -8,11 +8,14 @@ http://caffe.berkeleyvision.org/install_apt.html
 - OS: Ubuntu 14.04 LTS 
 - GPU
 
+# Script 이용하여 설치 하기 (COU Onl
+
+- [Caffe and pycaffe on Ubuntu 14.04 x64 or 14.10 x64. CPU only](https://github.com/davidstutz/caffe-tools/blob/master/install_caffe.sh)
+
 # Conda 이용하여 설치 하기 
 ```
 conda install -c anaconda caffe=1.0
 ```
-> Python에서 Import caffe만 가능하고, tool들은 사용 못한것 같음 
 
 # Docker 이용하여 설치 하기 
 ```bash
