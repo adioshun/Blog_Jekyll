@@ -8,7 +8,7 @@ http://caffe.berkeleyvision.org/install_apt.html
 - OS: Ubuntu 14.04 LTS 
 - GPU
 
-# Script 이용하여 설치 하기 (COU Onl
+# Script 이용하여 설치 하기 (CPU only, Ubuntu 14.04)
 
 - [Caffe and pycaffe on Ubuntu 14.04 x64 or 14.10 x64. CPU only](https://github.com/davidstutz/caffe-tools/blob/master/install_caffe.sh)
 
