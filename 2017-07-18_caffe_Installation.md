@@ -19,6 +19,18 @@ source activate pycaffe
 conda install -c anaconda caffe=1.0
 ```
 
+Dependency
+```bash
+sudo apt-get update
+
+sudo apt-get upgrade
+
+sudo apt-get install -y build-essential cmake git pkg-config libprotobuf-dev libleveldb-dev libsnappy-dev protobuf-compiler
+sudo apt-get install -y libatlas-base-dev libgflags-dev libgoogle-glog-dev liblmdb-dev
+sudo apt-get install -y --no-install-recommends libboost-all-dev
+
+```
+
 # Docker 이용하여 설치 하기 
 ```bash
 docker pull haje01/caffe 
