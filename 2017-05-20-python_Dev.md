@@ -6,6 +6,10 @@ print "CUDA:   ", subprocess.Popen(["nvcc","--version"], stdout=subprocess.PIPE)
 print "LMDB:   ", ".".join([str(i) for i in lmdb.version()])
 ```
 
+```
+print caffe.__version__"
+```
+
 ## Pip based Installation
 
 ```bash
