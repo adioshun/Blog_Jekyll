@@ -15,7 +15,8 @@ sudo curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.
 ```
 > zsh가 느리게 시작 할때 `sudo rm -rf /private/var/log/asl*.as`
 
-[참고](https://nolboo.kim/blog/2015/08/21/oh-my-zsh/)
+> [oh-my-zsh](https://nolboo.kim/blog/2015/08/21/oh-my-zsh/)
+
 ---
 
 ## TMUX
