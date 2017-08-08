@@ -46,7 +46,7 @@ jupyter contrib nbextension install --user
 ```
 [참고](https://github.com/ipython-contrib/jupyter_contrib_nbextensions)
 
-### Jupyter 커널추가
+### Jupyter 다중커널설정
 ```
 # conda2 OR 3 install 
 
@@ -56,6 +56,8 @@ jupyter kernelspec list #설치된 커널 확인
 conda install notebook ipykernel
 ipython kernel install --user
 ```
+
+> [Docker 이미지로 설치한 Jupyter에 커널 추가하기](http://mazdah.tistory.com/784)
 
 #### 2. Python 용 R 설치 \(/w conda\)
 
