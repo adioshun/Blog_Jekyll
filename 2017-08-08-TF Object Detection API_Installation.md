@@ -11,7 +11,8 @@
 # For CPU
 pip install tensorflow
 # For GPU
-pip install tensorflow-gpu
+#pip install tensorflow-gpu
+conda install tensorflow-gpu
 ```
 
 관련 패키지 설치
