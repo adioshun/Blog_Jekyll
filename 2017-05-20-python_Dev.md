@@ -73,6 +73,13 @@ conda env create --file environment.yml --name CarND-Vehicle-Detection
 source activate CarND-Vehicle-Detection
 ```
 
+```bash
+pip install virtualenv
+virtualenv -p /usr/bin/python2.7 my_project
+source my_project/bin/activate
+```
+
+
 ### requirement.txt 파일이용하여한번에설치하기
 
 ```
