@@ -59,7 +59,7 @@ pytbon2 : pip install opencv_python
 
 - 기타패키지 : `conda install -y scipy matplotlib scikit-learn scikit-image keras pandas `
 
-> [주피터설정하기](https://github.com/adioshun/Blog_Jekyll/blob/master/2017-07-18_Jupyter_Installation.md)
+> [주피터설정하기](https://github.com/adioshun/Blog_Jekyll/blob/master/2017-07-18_Jupyter_setup.md)
 
 ###### 가상공간설정저장및불러오기
 
