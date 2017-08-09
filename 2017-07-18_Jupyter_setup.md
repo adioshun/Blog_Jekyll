@@ -79,3 +79,8 @@ IRkernel::installspec()
 
 > 패키지설치시: install.packages("ldavis", "/home/user/anaconda3/lib/R/library")
 > [메뉴얼필독](https://www.r-bloggers.com/jupyter-and-r-markdown-notebooks-with-r/amp/)
+
+-- 
+# Jupyter Tips
+
+- [28 Jupyter Notebook tips, tricks and shortcuts](https://www.dataquest.io/blog/jupyter-notebook-tips-tricks-shortcuts/)
