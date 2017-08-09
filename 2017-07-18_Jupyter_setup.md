@@ -57,7 +57,8 @@ conda install notebook ipykernel
 ipython kernel install --user
 ```
 
-> [Docker 이미지로 설치한 Jupyter에 커널 추가하기](http://mazdah.tistory.com/784)
+> - [Docker 이미지로 설치한 Jupyter에 커널 추가하기](http://mazdah.tistory.com/784)
+> - [Installing the IPython kernel](http://ipython.readthedocs.io/en/stable/install/kernel_install.html)
 
 #### 2. Python 용 R 설치 \(/w conda\)
 
