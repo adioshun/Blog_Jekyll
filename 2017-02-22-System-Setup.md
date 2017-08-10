@@ -1,7 +1,7 @@
 
 
 
-- GPU Monitoring : `apt-get install nmon' , `gpustat`, `nvidia-smi -l 2`
+- GPU Monitoring : `apt-get install nmon` , `gpustat`, `nvidia-smi -l 2`
 
 ```
 sudo apt purge nvidia-*
