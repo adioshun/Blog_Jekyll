@@ -65,6 +65,15 @@ bind -n WheelUpPane   select-pane -t= \; copy-mode -e \; send-keys -M
 bind -n WheelDownPane select-pane -t= \;                 send-keys -M
 ```
 
+```
+# Use mouse for 1.8
+setw -g mode-mouse on
+set -g mouse-select-window on
+set -g mouse-select-pane on
+set -g mouse-resize-pane on
+set -g mouse-utf on
+```
+
 ## 4windows Startup
 
 script `start_tmux.sh`
