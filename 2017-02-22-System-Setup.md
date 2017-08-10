@@ -1,7 +1,14 @@
 
 
 
-- GPU Monitoring : `apt-get install nmon' 
+- GPU Monitoring : `apt-get install nmon' , `gpustat`, `nvidia-smi -l 2`
+
+```
+sudo apt purge nvidia-*
+sudo add-apt-repository ppa:graphics-drivers/ppa
+sudo apt update
+sudo apt install nvidia-381
+```
 
 - Job Monitoring and notification : [Hyperdash](https://hyperdash.io/), `pip install hyperdash && hyperdash login`
 ---
