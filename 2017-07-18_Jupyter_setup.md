@@ -47,10 +47,17 @@ jupyter contrib nbextension install --user
 [참고](https://github.com/ipython-contrib/jupyter_contrib_nbextensions)
 
 ### Jupyter 다중커널설정
+
+```
+jupyter kernelspec list
+source activate py2torch
+python -m ipykernel install --user --name py2torch --display-name "Python2(pytorch)"
+```
+
 ```
 # conda2 OR 3 install 
 
-conda create -n pyton3 python=3
+conda create -n pyton3 python=3 ipykernel
 
 jupyter kernelspec list #설치된 커널 확인 
 conda install notebook ipykernel
