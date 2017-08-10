@@ -12,6 +12,8 @@
 	- glances : `sudo pip install glances[gpu]`, `sudo glances`
 	- intel-gpu-tools : `sudo apt-get install intel-gpu-tools`, `intel_gpu_top`
 
+![](http://i.imgur.com/XjyHkIF.png)
+
 - Job Monitoring and notification 
 	- [Hyperdash](https://hyperdash.io/): `pip install hyperdash && hyperdash login`
 
