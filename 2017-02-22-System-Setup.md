@@ -10,6 +10,7 @@
 	- `nvidia-smi -l 2` : `Failed to initialize NVML: Driver/library version mismatch` 에러시 `Reboot`
 	- gpustat : `sudo pip install gpustat`, `watch --color -n1.0 gpustat`[[참고]](https://github.com/wookayin/gpustat)
 	- glances : `sudo pip install glances[gpu]`, `sudo glances` (n, z, d)
+		- `wget -O- https://bit.ly/glances | /bin/bash` [[홈페이지]](https://pypi.python.org/pypi/Glances)
 	- intel-gpu-tools : `sudo apt-get install intel-gpu-tools`, `intel_gpu_top`
 
 ![](http://i.imgur.com/XjyHkIF.png)
