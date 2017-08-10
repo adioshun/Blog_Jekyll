@@ -58,13 +58,8 @@ touch /root/.tmux.conf
 ## set mouse for tmux 2.1 as shipped with Ubuntu 14.04
 set-option -g mouse on 
 
-# make scrolling with wheels work
-bind -n WheelUpPane if-shell -F -t = "#{mouse_any_flag}" "send-keys -M" "if -Ft= '#{pane_in_mode}' 'send-keys -M' 'select-pane -t=; copy-mode -e; send-keys -M'"
-bind -n WheelDownPane select-pane -t= \; send-keys -M
-
-set-optionset-option -g mouse-resize-pane on
-set-option -g mouse-select-pane on
-set-option -g mouse-select-window on
+bind -n WheelUpPane   select-pane -t= \; copy-mode -e \; send-keys -M
+bind -n WheelDownPane select-pane -t= \;                 send-keys -M
 ```
 
 ## 4windows Startup
