@@ -45,8 +45,10 @@ sudo add-apt-repository -y ppa:xorg-edgers/ppa -y
 sudo apt-get update
 sudo apt-get install nvidia-current
 
-
-출처: http://moothink.tistory.com/entry/우분투-1404-nvidia-드라이버-설치 [끄적임]
+sudo apt purge nvidia-*
+sudo add-apt-repository ppa:graphics-drivers/ppa
+sudo apt update
+sudo apt install nvidia-381
 ```
 
 
