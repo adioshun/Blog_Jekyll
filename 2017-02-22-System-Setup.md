@@ -2,7 +2,7 @@
 
 
 - GPU Monitoring : [apt-get install nmon](https://github.com/adioshun/Blog_Jekyll/blob/master/2017-07-18-CUDA_CuDNN_Installation.md#0-nvidia-드라이버-설치) , `gpustat`, `nvidia-smi -l 2`
-
+	- `Failed to initialize NVML: Driver/library version mismatch` : Reboot
 - Job Monitoring and notification : [Hyperdash](https://hyperdash.io/), `pip install hyperdash && hyperdash login`
 ---
 
