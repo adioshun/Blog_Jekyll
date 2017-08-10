@@ -1,9 +1,19 @@
 
 
+## Monitoring
 
-- GPU Monitoring : [apt-get install nmon](https://github.com/adioshun/Blog_Jekyll/blob/master/2017-07-18-CUDA_CuDNN_Installation.md#0-nvidia-드라이버-설치) , `gpustat`, `nvidia-smi -l 2`
-	- `Failed to initialize NVML: Driver/library version mismatch` : Reboot
-- Job Monitoring and notification : [Hyperdash](https://hyperdash.io/), `pip install hyperdash && hyperdash login`
+- CPU 
+	- htop : `sudo apt-get install htop`
+	- nmon : `sudo apt-get install nmon`
+
+- GPU Monitoring : 
+	- `nvidia-smi -l 2` : `Failed to initialize NVML: Driver/library version mismatch` 에러시 `Reboot`
+	- gpustat : `sudo pip install gpustat`, nvidia기반, [[참고]](https://github.com/wookayin/gpustat)
+	- glances : `sudo pip install glances[gpu]`, `sudo glances`
+	- intel-gpu-tools : `sudo apt-get install intel-gpu-tools`, `intel_gpu_top`
+
+- Job Monitoring and notification 
+	- [Hyperdash](https://hyperdash.io/): `pip install hyperdash && hyperdash login`
 
 ![](http://i.imgur.com/QCEGtYx.png)
 
