@@ -55,11 +55,16 @@ tmux new -s <원하는 이름>
 touch /root/.tmux.conf
 
 ```
-## set mouse for tmux 1.8 as shipped with Ubuntu 14.04
-set -g mode-mouse on
-set -g mouse-resize-pane on
-set -g mouse-select-pane on
-set -g mouse-select-window on
+## set mouse for tmux 2.1 as shipped with Ubuntu 14.04
+set-option -g mouse on 
+
+# make scrolling with wheels work
+bind -n WheelUpPane if-shell -F -t = "#{mouse_any_flag}" "send-keys -M" "if -Ft= '#{pane_in_mode}' 'send-keys -M' 'select-pane -t=; copy-mode -e; send-keys -M'"
+bind -n WheelDownPane select-pane -t= \; send-keys -M
+
+set-optionset-option -g mouse-resize-pane on
+set-option -g mouse-select-pane on
+set-option -g mouse-select-window on
 ```
 
 ## 4windows Startup
