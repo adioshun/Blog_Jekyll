@@ -110,6 +110,7 @@ Pillow>=2.3.0
 ```
 
 - pip :`for req in $(cat requirements.txt); do pip install $req | cut -d ">" -f1; done`
+  - `pip install .`
 - conda : `while read requirement; do conda install --yes $requirement; done < requirements.txt`
 
 출처: http://goodtogreate.tistory.com/entry/FasterRCNN-Install-on-Ubuntu-1604GTX1080-CUDA-80cuDNN-51 [GOOD to GREAT]
