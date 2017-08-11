@@ -63,6 +63,18 @@ set-option -g mouse on
 
 bind -n WheelUpPane   select-pane -t= \; copy-mode -e \; send-keys -M
 bind -n WheelDownPane select-pane -t= \;                 send-keys -M
+
+# Set the default terminal mode to 256color mode
+set -g default-terminal "screen-256color"
+
+# enable activity alerts
+setw -g monitor-activity on
+set -g visual-activity on
+
+# Center the window list
+set -g status-justify centre
+
+
 ```
 
 ```
@@ -74,7 +86,7 @@ set -g mouse-resize-pane on
 set -g mouse-utf on
 ```
 
-## 4windows Startup
+## 4-windows Startup
 
 script `start_tmux.sh`
 
