@@ -80,44 +80,22 @@ pip install opencv_python
 
 --- 
 
-###### [Tip] 가상공간설정저장및불러오기
+## 3. 가상공간 환경 사용하기 
 
-```
-#저장하기
-source activate CarND-Vehicle-Detection
-conda env export > environment.yml
 
-#불러오기
-conda env create --file environment.yml --name CarND-Vehicle-Detection
-source activate CarND-Vehicle-Detection
-```
+### 3.1 Conda 
 
 ```bash
-pip install virtualenv
-virtualenv -p /usr/bin/python2.7 my_project
-source my_project/bin/activate
+conda create -n venv
+
+source activate venv
+source deactivate venv
 ```
-
-
-###### [Tip] requirement.txt 파일이용하여한번에설치하기
-
-```
-Cython>=0.19.2
-numpy>=1.7.1
-...
-pyyaml>=3.10
-Pillow>=2.3.0
-```
-
-- pip :`for req in $(cat requirements.txt); do pip install $req | cut -d ">" -f1; done`
-  - `pip install .`
-- conda : `while read requirement; do conda install --yes $requirement; done < requirements.txt`
-
-출처: http://goodtogreate.tistory.com/entry/FasterRCNN-Install-on-Ubuntu-1604GTX1080-CUDA-80cuDNN-51 [GOOD to GREAT]
 
 
 ###### [Tip] [requirement.yml](https://github.com/datitran/Object-Detector-App/blob/master/environment.yml) 파일이용하여 한번에 가상환경 설치하기
 
+- requirement.yml 파일 생성 하기 : conda env export > environment.yml
 
 ```
 name: object-detection
@@ -134,7 +112,39 @@ prefix: /Users/datitran/anaconda/envs/object-detection
 
 - `conda env create -f environment.yml`
 
+### 3.2 pip 
 
+```bash
+pip install virtualenv
+virtualenv -p /usr/bin/python2.7 venv
+virtualenv --python=python3.3 venv
+virtualenv --system-site-packages venv # global패키지 사용이 가능하다는 듯
+
+
+source venv/bin/activate
+deactivate
+```
+
+
+###### [Tip] requirements.txt 파일이용하여한번에설치하기
+
+- requirements.txt파일 생성 하기 : pip freeze > requirements.txt
+
+```
+Cython>=0.19.2
+numpy>=1.7.1
+...
+pyyaml>=3.10
+Pillow>=2.3.0
+```
+
+- pip 
+	- `for req in $(cat requirements.txt); do pip install $req | cut -d ">" -f1; done`
+	- `pip install .`
+    - `pip install -r requirements.txt`
+- conda : `while read requirement; do conda install --yes $requirement; done < requirements.txt`
+
+---
 
 #### Spyder remote kernel connection
 1. In jupyter run `%connect_info'
@@ -142,9 +152,3 @@ prefix: /Users/datitran/anaconda/envs/object-detection
 3. Run spyder -
 
 참고 : http://stackoverflow.com/questions/39007571/running-jupyter-with-multiple-python-and-ipython-paths
-
-
-
-
-
-
